@@ -1,0 +1,16 @@
+{
+    "companyName": "PierreVandermaesen",
+    "productName": "Roots",
+    "productVersion": "1.4",
+    "dataUrl": "Roots_WebGL_1.5.data.unityweb",
+    "wasmCodeUrl": "Roots_WebGL_1.5.wasm.code.unityweb",
+    "wasmFrameworkUrl": "Roots_WebGL_1.5.wasm.framework.unityweb",
+    "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+    "webglContextAttributes": {"preserveDrawingBuffer": false},
+    "splashScreenStyle": "Dark",
+    "backgroundColor": "#7A6563",
+    "cacheControl": {"default": "must-revalidate"},
+    "developmentBuild": false,
+    "multithreading": false,
+    "unityVersion": "2019.4.18f1"
+    }

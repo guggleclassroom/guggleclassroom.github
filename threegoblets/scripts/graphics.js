@@ -29,6 +29,8 @@ define(['lib/pixi'], function (PIXI) {
       this.stage = new PIXI.Container();
       this.stage.scale.x = 4;
       this.stage.scale.y = 4;
+      this.videoExt = '';
+      this.logos = [];
       this.monsterSizes = [];
       this.modifiedTextures = {};
       this.masks = [];
@@ -47,14 +49,46 @@ define(['lib/pixi'], function (PIXI) {
           return _this.stage.addChild(l);
         });
       }
+    }, {
+      key: "setVideoExtension",
+      value: function setVideoExtension(extenstion) {
+        this.videoExt = extenstion;
+      }
       //*******************************************************************************************************************
       // * Load Resources
       //*******************************************************************************************************************
 
     }, {
+      key: "loadInitResources",
+      value: function loadInitResources(config, callback) {
+        var _this2 = this;
+
+        var loader = PIXI.loader;
+        loader.add('loading', 'assets/loading.png');
+        config.logos.forEach(function (logoData) {
+          var ext = logoData.type == 'Image' ? '.png' : '.' + _this2.videoExt;
+          var metadata = { logoType: logoData.type, link: logoData.link };
+          loader.add(logoData.source, 'assets/' + logoData.source + ext, { metadata: metadata });
+        });
+
+        loader.load(function (loader, resources) {
+          Object.values(resources).forEach(function (resource) {
+            if (resource.metadata.logoType) {
+              var duration = resource.data.duration ? Math.ceil(resource.data.duration * 60) : 180;
+              _this2.logos.push({ type: resource.metadata.logoType, url: resource.url.match(/^(.*)\./)[1], link: resource.metadata.link, duration: duration });
+            }
+
+            if (resource.extension !== _this2.videoExt) {
+              PIXI.BaseTexture.addToCache(resource.texture.baseTexture, resource.url);
+            }
+          });
+          callback();
+        });
+      }
+    }, {
       key: "loadResources",
       value: function loadResources(callback) {
-        var _this2 = this;
+        var _this3 = this;
 
         var loader = PIXI.loader;
         loader.add('fontData', 'assets/MunroFont.fnt');
@@ -66,9 +100,8 @@ define(['lib/pixi'], function (PIXI) {
         loader.add('splashAnim', 'assets/animations/splashAnim.json');
         loader.add('crossAnim', 'assets/animations/crossAnim.json');
         loader.load(function (loader, resources) {
-          _this2.generateModifiedTextures(resources.atlas);
-          _this2.generateMonsterSizes(resources.atlas);
-          //this.generateMasks()
+          _this3.generateModifiedTextures(resources.atlas);
+          _this3.generateMonsterSizes(resources.atlas);
           callback();
         });
       }
@@ -114,6 +147,17 @@ define(['lib/pixi'], function (PIXI) {
         var layer = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'base';
 
         var sprite = new PIXI.Sprite.fromImage(name + '.png');
+        sprite.x = x;
+        sprite.y = y;
+        this.layers[layer].addChild(sprite);
+        return sprite;
+      }
+    }, {
+      key: "addVideoSprite",
+      value: function addVideoSprite(x, y, name) {
+        var layer = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'base';
+
+        var sprite = new PIXI.Sprite(this.getVideoTexture(name));
         sprite.x = x;
         sprite.y = y;
         this.layers[layer].addChild(sprite);
@@ -226,7 +270,7 @@ define(['lib/pixi'], function (PIXI) {
     }, {
       key: "generateRecoloredSprites",
       value: function generateRecoloredSprites(textures, filter, modificationName, colorId) {
-        var _this3 = this;
+        var _this4 = this;
 
         this.modifiedTextures[modificationName] = this.modifiedTextures[modificationName] || {};
         var sprite = new PIXI.Sprite();
@@ -243,7 +287,7 @@ define(['lib/pixi'], function (PIXI) {
               textureObj = _ref4[1];
 
           sprite.texture = textureObj;
-          var canvas = _this3.renderer.extract.canvas(sprite);
+          var canvas = _this4.renderer.extract.canvas(sprite);
           var context = canvas.getContext('2d');
 
           var color = '#' + colors[colorId].toString(16);
@@ -254,16 +298,16 @@ define(['lib/pixi'], function (PIXI) {
           context.fill();
           context.closePath();
 
-          _this3.modifiedTextures[modificationName][name] = new PIXI.Texture.fromCanvas(canvas);
+          _this4.modifiedTextures[modificationName][name] = new PIXI.Texture.fromCanvas(canvas);
         });
       }
     }, {
       key: "generateScaledSprites",
       value: function generateScaledSprites(textures) {
-        var _this4 = this;
+        var _this5 = this;
 
         ;[0, 1, 2, 3, 4].forEach(function (i) {
-          return _this4.modifiedTextures['appearing' + i] = {};
+          return _this5.modifiedTextures['appearing' + i] = {};
         });
         var sprite = new PIXI.Sprite();
         textures = Object.entries(textures).filter(function (_ref5) {
@@ -285,15 +329,15 @@ define(['lib/pixi'], function (PIXI) {
             sprite.scale.y = (i + 1) / (iterations + 1);
             sprite.y = sprite.height;
             var renderTexture = PIXI.RenderTexture.create(sprite.width, sprite.height + 1, PIXI.SCALE_MODES.NEAREST);
-            _this4.renderer.render(sprite, renderTexture);
-            _this4.modifiedTextures['appearing' + i][name] = renderTexture;
+            _this5.renderer.render(sprite, renderTexture);
+            _this5.modifiedTextures['appearing' + i][name] = renderTexture;
           }
         });
       }
     }, {
       key: "generateDitheredSprites",
       value: function generateDitheredSprites(textures) {
-        var _this5 = this;
+        var _this6 = this;
 
         this.modifiedTextures.dithered = {};
         var sprite = new PIXI.Sprite();
@@ -311,7 +355,7 @@ define(['lib/pixi'], function (PIXI) {
               textureObj = _ref12[1];
 
           sprite.texture = textureObj;
-          var canvas = _this5.renderer.extract.canvas(sprite);
+          var canvas = _this6.renderer.extract.canvas(sprite);
           var context = canvas.getContext('2d');
 
           context.globalCompositeOperation = 'destination-out';
@@ -325,7 +369,7 @@ define(['lib/pixi'], function (PIXI) {
           context.fill();
           context.closePath();
 
-          _this5.modifiedTextures.dithered[name] = new PIXI.Texture.fromCanvas(canvas);
+          _this6.modifiedTextures.dithered[name] = new PIXI.Texture.fromCanvas(canvas);
         });
       }
       //*******************************************************************************************************************
@@ -338,6 +382,11 @@ define(['lib/pixi'], function (PIXI) {
         return PIXI.Texture.fromImage(name + '.png');
       }
     }, {
+      key: "getVideoTexture",
+      value: function getVideoTexture(name) {
+        return PIXI.Texture.fromVideo(name + '.' + this.videoExt);
+      }
+    }, {
       key: "getModifiedTexture",
       value: function getModifiedTexture(name, modification) {
         return this.modifiedTextures[modification][name + '.png'];
@@ -345,7 +394,7 @@ define(['lib/pixi'], function (PIXI) {
     }, {
       key: "generateMonsterSizes",
       value: function generateMonsterSizes(resource) {
-        var _this6 = this;
+        var _this7 = this;
 
         var frames = resource.spritesheet.data.frames;
         var monsterFrames = Object.entries(frames).filter(function (_ref13) {
@@ -360,7 +409,7 @@ define(['lib/pixi'], function (PIXI) {
               name = _ref16[0],
               frameObj = _ref16[1];
 
-          return _this6.monsterSizes[name] = { w: frameObj.frame.w, h: frameObj.frame.h };
+          return _this7.monsterSizes[name] = { w: frameObj.frame.w, h: frameObj.frame.h };
         });
       }
     }, {

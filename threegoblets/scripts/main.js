@@ -1,6 +1,6 @@
 'use strict';
 
-define(['game', 'config', 'loader', 'statistics', 'storage', 'input', 'graphics', 'audio', 'player', 'panels', 'world', 'loot', 'forge', 'tips', 'tooltip'], function (game, config, Loader, Statistics, Storage, Input, Graphics, Audio, Player, Panels, World, Loot, Forge, Tips, Tooltip) {
+define(['game', 'config', 'loader', 'initScreen', 'statistics', 'storage', 'input', 'graphics', 'audio', 'player', 'panels', 'world', 'loot', 'forge', 'tips', 'tooltip'], function (game, config, Loader, InitScreen, Statistics, Storage, Input, Graphics, Audio, Player, Panels, World, Loot, Forge, Tips, Tooltip) {
 
   game.config = config;
   game.statistics = new Statistics();
@@ -8,8 +8,17 @@ define(['game', 'config', 'loader', 'statistics', 'storage', 'input', 'graphics'
   game.graphics = new Graphics();
   game.audio = new Audio();
 
-  var loader = new Loader();
-  loader.load(start);
+  game.initScreen = new InitScreen();
+  game.loader = new Loader();
+  game.loader.preload(startLogos);
+
+  function startLogos() {
+    // if (document.domain.indexOf(config.domainLock) === -1) {
+    //   console.log('Domain Locked!');
+    //   return;
+    // }
+    game.initScreen.setup(start);
+  }
 
   function start() {
     initialize();

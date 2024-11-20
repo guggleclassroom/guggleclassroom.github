@@ -106,7 +106,7 @@ define(['game', 'item', 'goblet', 'key'], function (game, Item, Goblet, Key) {
     }, {
       key: 'getRarities',
       value: function getRarities() {
-        return game.world.shownFin ? [0, 0.65, 0.90, 0.95, 0.99, 0.99] : [0, 0.65, 0.90, 0.95];
+        return game.world.shownFin ? [0, 0.75, 0.80, 0.95, 0.90, 0.95] : [0, 0.85, 0.90, 0.95];
       }
       //*******************************************************************************************************************
       // * Other
