@@ -2,14 +2,26 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
+    <title>Gaming Land</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: #1a1a1a; /* Dark background */
+            background-color: #1a1a1a; /* Dark background for fallback */
             color: #ffffff; /* White text */
             font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
             text-align: center;
             margin: 0;
-            padding: 25px;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        #stars, #stars2, #stars3 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Place stars in the background */
         }
 
         .grid {
@@ -17,6 +29,7 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
             gap: 20px;
             padding: 20px;
+            position: relative; /* So stars stay in the background */
         }
 
         .game-card {
@@ -33,99 +46,144 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
         }
 
-        .game-card img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover; /* Ensure consistent image scaling */
-            border-radius: 10px;
-        }
-
         .game-card a {
             color: #ffffff; /* White text for links */
             text-decoration: none;
             font-size: 14px;
             font-weight: bold;
+            text-align: center;
+        }
+
+        .game-card a img {
+            display: block; /* Ensure image and text are separate */
+            margin: 0 auto; /* Center the image */
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
         .game-card a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
 <body>
-    <h1>Game Library</h1>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <h1>karim is fat gaming land</h1>
     <div class="grid">
         <div class="game-card">
-            <img src="assets/icons/dieinthedungeon.png" alt="die in the dungeon">
-            <a href="assets/games/dieinthedungeon/dieinthedungeon.html">Die in the Dungeon</a>
+            <a href="assets/games/dieinthedungeon/dieinthedungeon.html">
+                <img src="assets/icons/dieinthedungeon.png" 
+                     class="animate__animated animate__pulse animate__slow animate__infinite" 
+                     alt="die in the dungeon">
+                die in the dungeon
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/sortthecourt.png" alt="sort the court">
-            <a href="assets/games/sortthecourt/sortthecourt.html">Sort the Court</a>
+            <a href="assets/games/sortthecourt/sortthecourt.html">
+                <img src="assets/icons/sortthecourt.png" alt="sort the court">
+                sort the court
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/rocketpult.png" alt="rocketpult">
-            <a href="assets/games/rocketpult/rocketpult.html">Rocketpult</a>
+            <a href="assets/games/rocketpult/rocketpult.html">
+                <img src="assets/icons/rocketpult.png" alt="rocketpult">
+                rocketpult
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/snowballio.png" alt="snowball.io">
-            <a href="assets/games/snowball.io/snowball.io.html">Snowball.io</a>
+            <a href="assets/games/snowball.io/snowball.io.html">
+                <img src="assets/icons/snowball.io.png" alt="snowball.io">
+                snowball.io
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/slope.png" alt="slope">
-            <a href="assets/games/slope/slope.html">Slope</a>
+            <a href="assets/games/slope/slope.html">
+                <img src="assets/icons/slope.png" alt="slope">
+                slope
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/10minutestilldawn.png" alt="10 minutes till dawn">
-            <a href="assets/games/10minutestilldawn/10minutestilldawn.html">10 Minutes Till Dawn</a>
+            <a href="assets/games/10minutestilldawn/10minutestilldawn.html">
+                <img src="assets/icons/10minutestilldawn.png" alt="10 minutes till dawn">
+                10 minutes till dawn
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/drivemad.png" alt="drive mad">
-            <a href="assets/games/drivemad/drivemad.html">Drive Mad</a>
+            <a href="assets/games/drivemad/drivemad.html">
+                <img src="assets/icons/drivemad.png" alt="drive mad">
+                drive mad
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/frogmageddon.png" alt="frogmageddon">
-            <a href="assets/games/frogmageddon/frogmageddon.html">Frogmageddon</a>
+            <a href="assets/games/frogmageddon/frogmageddon.html">
+                <img src="assets/icons/frogmageddon.png" alt="frogmageddon">
+                frogmageddon
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/blockblast.png" alt="block blast">
-            <a href="assets/games/blockblast/blockblast.html">Block Blast</a>
+            <a href="assets/games/blockblast/blockblast.html">
+                <img src="assets/icons/blockblast.png" alt="block blast">
+                block blast
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/tombofthemask.png" alt="tomb of the mask">
-            <a href="assets/games/tombofthemask/tombofthemask.html">Tomb of the Mask</a>
+            <a href="assets/games/tombofthemask/tombofthemask.html">
+                <img src="assets/icons/tombofthemask.png" alt="tomb of the mask">
+                tomb of the mask
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/minimetro.png" alt="mini metro">
-            <a href="assets/games/minimetro/minimetro.html">Mini Metro</a>
+            <a href="assets/games/minimetro/minimetro.html">
+                <img src="assets/icons/minimetro.png" alt="mini metro">
+                mini metro
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/roots.png" alt="roots">
-            <a href="assets/games/roots/roots.html">Roots</a>
+            <a href="assets/games/roots/roots.html">
+                <img src="assets/icons/roots.png" alt="roots">
+                roots
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/slimeow.png" alt="slimeow">
-            <a href="assets/games/slimeow/slimeow.html">Slimeow</a>
+            <a href="assets/games/slimeow/slimeow.html">
+                <img src="assets/icons/slimeow.png" alt="slimeow">
+                slimeow
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/stormgrill.png" alt="storm grill">
-            <a href="assets/games/stormgrill/stormgrill.html">Storm Grill</a>
+            <a href="assets/games/stormgrill/stormgrill.html">
+                <img src="assets/icons/stormgrill.png" alt="storm grill">
+                storm grill
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/popthelock.png" alt="pop the lock">
-            <a href="assets/games/popthelock/popthelock.html">Pop the Lock</a>
+            <a href="assets/games/popthelock/popthelock.html">
+                <img src="assets/icons/popthelock.png" alt="pop the lock">
+                pop the lock
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/snowrider.png" alt="snow rider">
-            <a href="assets/games/snowrider/snowrider.html">Snow Rider</a>
+            <a href="assets/games/snowrider/snowrider.html">
+                <img src="assets/icons/snowrider.png" alt="snow rider">
+                snow rider
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/shogunshowdown.png" alt="shogun showdown">
-            <a href="assets/games/shogunshowdown/shogunshowdown.html">Shogun Showdown</a>
+            <a href="assets/games/shogunshowdown/shogunshowdown.html">
+                <img src="assets/icons/shogunshowdown.png" alt="shogun showdown">
+                shogun showdown
+            </a>
         </div>
         <div class="game-card">
-            <img src="assets/icons/chibiknight.png" alt="chibi knight">
-            <a href="assets/games/chibiknight/chibiknight.html">Chibi Knight</a>
+            <a href="assets/games/chibiknight/chibiknight.html">
+                <img src="assets/icons/chibiknight.png" alt="chibi knight">
+                chibi knight
+            </a>
         </div>
     </div>
 </body>
