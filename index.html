@@ -6,77 +6,127 @@
         body {
             background-color: #1a1a1a; /* Dark background */
             color: #ffffff; /* White text */
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */ 
-            text-align: center; /* Center align text */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+            text-align: center;
             margin: 0;
-            padding: 25px; /* Padding around the content */
+            padding: 25px;
         }
-        a:hover {
-            text-decoration: underline; /* Underline on hover */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
         }
-        .link-space {
-            margin-top: 20px; /* Space for additional link */
+
+        .game-card {
+            background-color: #1f1f1f; /* Slightly lighter background for contrast */
+            border: 3px solid #333333; /* Darker border for rim */
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px;
+            width: 200px; /* Fixed width */
+            height: 250px; /* Fixed height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+
+        .game-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover; /* Ensure consistent image scaling */
+            border-radius: 10px;
+        }
+
+        .game-card a {
+            color: #ffffff; /* White text for links */
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .game-card a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>hi</h1>
-    <div>
-        <a href="assets/games/dieinthedungeon/DieInTheDungeon.html">die in the dungeon</a>
+    <h1>Game Library</h1>
+    <div class="grid">
+        <div class="game-card">
+            <img src="assets/icons/dieinthedungeon.png" alt="die in the dungeon">
+            <a href="assets/games/dieinthedungeon/dieinthedungeon.html">Die in the Dungeon</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/sortthecourt.png" alt="sort the court">
+            <a href="assets/games/sortthecourt/sortthecourt.html">Sort the Court</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/rocketpult.png" alt="rocketpult">
+            <a href="assets/games/rocketpult/rocketpult.html">Rocketpult</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/snowballio.png" alt="snowball.io">
+            <a href="assets/games/snowball.io/snowball.io.html">Snowball.io</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/slope.png" alt="slope">
+            <a href="assets/games/slope/slope.html">Slope</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/10minutestilldawn.png" alt="10 minutes till dawn">
+            <a href="assets/games/10minutestilldawn/10minutestilldawn.html">10 Minutes Till Dawn</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/drivemad.png" alt="drive mad">
+            <a href="assets/games/drivemad/drivemad.html">Drive Mad</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/frogmageddon.png" alt="frogmageddon">
+            <a href="assets/games/frogmageddon/frogmageddon.html">Frogmageddon</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/blockblast.png" alt="block blast">
+            <a href="assets/games/blockblast/blockblast.html">Block Blast</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/tombofthemask.png" alt="tomb of the mask">
+            <a href="assets/games/tombofthemask/tombofthemask.html">Tomb of the Mask</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/minimetro.png" alt="mini metro">
+            <a href="assets/games/minimetro/minimetro.html">Mini Metro</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/roots.png" alt="roots">
+            <a href="assets/games/roots/roots.html">Roots</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/slimeow.png" alt="slimeow">
+            <a href="assets/games/slimeow/slimeow.html">Slimeow</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/stormgrill.png" alt="storm grill">
+            <a href="assets/games/stormgrill/stormgrill.html">Storm Grill</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/popthelock.png" alt="pop the lock">
+            <a href="assets/games/popthelock/popthelock.html">Pop the Lock</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/snowrider.png" alt="snow rider">
+            <a href="assets/games/snowrider/snowrider.html">Snow Rider</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/shogunshowdown.png" alt="shogun showdown">
+            <a href="assets/games/shogunshowdown/shogunshowdown.html">Shogun Showdown</a>
+        </div>
+        <div class="game-card">
+            <img src="assets/icons/chibiknight.png" alt="chibi knight">
+            <a href="assets/games/chibiknight/chibiknight.html">Chibi Knight</a>
+        </div>
     </div>
-    <div>
-        <a href="assets/games/sortthecourt/SortTheCourt.html">sort the court</a>
-    </div>
-    <div>
-        <a href="assets/games/rocketpult/Rocketpult.html">rocketpult</a>
-    </div>
-    <div>
-        <a href="assets/games/snowball.io/snowball.io.html">snowball.io</a>
-    </div>
-    <div>
-        <a href="assets/games/slope/slope.html">slope</a>
-    </div>
-    <div>
-        <a href="assets/games/10minutestilldawn/10minutestilldawn.html">10 minutes till dawn</a>
-    </div>
-    <div>
-        <a href="assets/games/drivemad/drivemad.html">drive mad</a>
-    </div>
-    <div> 
-        <a href="assets/games/frogmageddon/frogmageddon.html">frogmageddon</a>
-    </div>
-     <div> 
-        <a href="assets/games/blockblast/blockblast.html">blok blast</a>
-    </div>
-    <div> 
-       <a href="assets/games/shapez/shapez.html">shapez.io</a>
-    </div>
-    <div> 
-       <a href="assets/games/tombofthemask/tombofthemask.html">tomb of the mask</a>
-    </div>
-    <div> 
-       <a href="assets/games/minimetro/minimetro.html">mini metro</a>
-    </div>
-    <div> 
-       <a href="assets/games/roots/roots.html">roots</a>
-    </div>
-    <div> 
-       <a href="assets/games/slimeow/slimeow.html">slimeow</a>
-    </div>
-    <div> 
-       <a href="assets/games/stormgrill/stormgrill.html">storm grill</a>
-    </div>
-    <div> 
-       <a href="assets/games/popthelock/popthelock.html">pop the lock</a>
-    </div>
-    <div> 
-       <a href="assets/games/snowrider/snowrider.html">snow rider</a>
-    </div>
-    <div> 
-       <a href="assets/games/shogunshowdown/shogunshowdown.html">shogun showdown</a>
-    </div>
-    <div> 
-       <a href="assets/games/chibiknight/chibiknight.html">chibi knight</a>
-</body>
 </body>
 </html>
