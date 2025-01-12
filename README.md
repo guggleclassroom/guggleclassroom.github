@@ -6,4 +6,5 @@ first recording: 1.10.2025
 [v2.3] - fixed die in the dungeon, stt and rocketpult still 404ing  (1.10.2025)
 [v2.4] - renamed webpage to match kp, and retrying to fix stt and rocketpult (1.10.2025)  
 [v2.5] - added rogue isles, drop guardian, ouroboros, and knee surgery simulator (1.12.2025)  
+[v2.6] - added run 3, fixed knee surgery sim
 
