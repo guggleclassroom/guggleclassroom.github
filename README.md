@@ -9,3 +9,4 @@ first recording: 1.10.2025
 [v2.6] - added run 3, fixed knee surgery sim (1.12.2025)  
 [v2.7] - fixed run 3 on homepage, added crossy road, solipskier, and yohoho (1.13.2025)  
 [v2.8] - deleted run 3 and yohoho, added duck life 3 and epic loot plz (1.13.2025)  
+[v2.9] - readded run 3 as swf file, moved epic loot plz to archive, and changed ui a little bit (1.14.2025)  

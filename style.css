@@ -1,29 +1,46 @@
-<style>
-    /* Add styles for the top-right button */
-    .top-right-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: #ffffff; /* Poppy red color */
-        color: #ffffff;
-        font-family: 'Comic Sans MS';
-        font-size: 14px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px; /* Square border with slightly rounded corners */
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        z-index: 1000; /* Make sure it stays on top */
-    }
+.top-right-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Comic Sans MS';
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  z-index: 1000;
+}
 
-    .top-right-button:hover {
-        background-color: #ffffff; /* Darker red on hover */
-        transform: scale(1.1); /* Poppy hover effect */
-    }
+.top-right-button:hover {
+  background-color: #ffffff;
+  transform: scale(1.1);
+}
 
-    .top-right-button:active {
-        background-color: #ffffff; /* Darkest red on click */
-        transform: scale(0.95); /* Slight compression on click */
-    }
-</style>
+.top-right-button:active {
+  background-color: #ffffff;
+  transform: scale(0.95);
+}
+
+.game-card {
+  background-color: #1f1f1f;
+  border: 3px solid #333333;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
