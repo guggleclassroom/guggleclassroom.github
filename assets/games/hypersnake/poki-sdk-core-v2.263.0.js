@@ -463,8 +463,8 @@
 		var e = i(564),
 			t = i.n(e);
 		const n = {
-			ready: "pokiAppReady",
-			adblocked: "pokiAppAdblocked",
+			ready: "",
+			adblocked: "",
 			ads: {
 				completed: "pokiAdsCompleted",
 				error: "pokiAdsError",
