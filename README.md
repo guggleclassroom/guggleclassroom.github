@@ -10,4 +10,6 @@ first recording: 1.10.2025
 [v2.7] - fixed run 3 on homepage, added crossy road, solipskier, and yohoho (1.13.2025)  
 [v2.8] - deleted run 3 and yohoho, added duck life 3 and epic loot plz (1.13.2025)  
 [v2.9] - readded run 3 as swf file, moved epic loot plz to archive, and changed ui a little bit (1.14.2025)  
-[v2.10] - added hypersnake
+[v2.10] - added hypersnake (1.15.2025)
+[v2.11] - fixed hypersnake, added ragdoll archers (1.16.2025)  
+[v2.12] - google analytics, idle pinball and ovo 2, and archived run 3 and knee surgery simulator
