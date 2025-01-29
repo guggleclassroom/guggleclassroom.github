@@ -1,3 +1,100 @@
+/* General Page Styling */
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Starry Background Layers */
+#stars, #stars2, #stars3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: transparent;
+}
+
+#stars {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  animation: moveStars 50s linear infinite;
+}
+
+#stars2 {
+  background: url('https://www.transparenttextures.com/patterns/tiny-stars.png') repeat;
+  animation: moveStars 100s linear infinite;
+  opacity: 0.5;
+}
+
+#stars3 {
+  background: url('https://www.transparenttextures.com/patterns/dark-matter.png') repeat;
+  animation: moveStars 150s linear infinite;
+  opacity: 0.3;
+}
+
+/* Star Animation */
+@keyframes moveStars {
+  from {
+      background-position: 0 0;
+  }
+  to {
+      background-position: -1000px 1000px;
+  }
+}
+
+/* Game Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Game Cards */
+.game-card {
+  background-color: #1f1f1f;
+  border: 3px solid #333333;
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.game-card a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.game-card a img {
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Top Right Button */
 .top-right-button {
   position: absolute;
   top: 20px;
@@ -23,24 +120,4 @@
 .top-right-button:active {
   background-color: #ffffff;
   transform: scale(0.95);
-}
-
-.game-card {
-  background-color: #1f1f1f;
-  border: 3px solid #333333;
-  border-radius: 10px;
-  padding: 10px;
-  width: 200px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.game-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
 }
