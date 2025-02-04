@@ -12,4 +12,6 @@ first recording: 1.10.2025
 [v2.9] - readded run 3 as swf file, moved epic loot plz to archive, and changed ui a little bit (1.14.2025)  
 [v2.10] - added hypersnake (1.15.2025)
 [v2.11] - fixed hypersnake, added ragdoll archers (1.16.2025)  
-[v2.12] - google analytics, idle pinball and ovo 2, and archived run 3 and knee surgery simulator
+[v2.12] - google analytics, idle pinball and ovo 2, and archived run 3 and knee surgery simulator (1.23.2025)
+[v2.13] - added ragdoll hit, push your luck, stickman hook, ovo dimensoins, and temple of boom, fixed background stars (1.29.2025)  
+[v2.14] - balatro only lol
