@@ -66,7 +66,7 @@ Module.expectedDataFileDownloads++;
         } else if (!Module.dataFileDownloads) {
           if (Module['setStatus']) Module['setStatus']('Downloading data...');
         }
-      };
+      };  
       xhr.onerror = function(event) {
         throw new Error("NetworkError for: " + packageName);
       }
@@ -284,6 +284,6 @@ Module.expectedDataFileDownloads++;
     }
 
   }
-  loadPackage({"package_uuid":"774807e7-9e59-4e9a-a88e-d2c8c3a388e5","remote_package_size":7914340,"files":[{"filename":"/game.love","crunched":0,"start":0,"end":7914340,"audio":false}]});
+  loadPackage({"package_uuid":"8fdb0dea-0664-48e3-ae36-e5f3c3b6dbbd","remote_package_size":8756053,"files":[{"filename":"/game.love","crunched":0,"start":0,"end":8756053,"audio":false}]});
 
 })();

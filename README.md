@@ -16,4 +16,5 @@ first recording: 1.10.2025
 [v2.13] - added ragdoll hit, push your luck, stickman hook, ovo dimensoins, and temple of boom, fixed background stars (1.29.2025)  
 [v2.14] - balatro only lol (2.3.2025)  
 [v2.15] - added retro bowl, dance of fire and ice, stacktris, and deepest sword (2.4.2025)  
-[v2.16] - first pokerogue test
+[v2.16] - first pokerogue test (2.5.2025)  
+[v2.17] - added pesticide not required and level 9 access (2.6.2025)
