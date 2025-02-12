@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <head>
-      <!-- Google tag (gtag.js) -->
+<head>
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZQ3JMT1YT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-QZQ3JMT1YT');
   </script>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Pesticide Not Required</title>
-    <style>
-      body {
-        margin: 0;
-        background-color: #231F20;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
-      }
-      #unity-container {
-        position: relative;
-        width: 80vw;
-        height: 45vw;
-        max-width: 960px;
-        max-height: 540px;
-      }
-      canvas {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="unity-container">
-      <canvas id="unity-canvas"></canvas>
-    </div>
-    <script src="Build/BuildWeb.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/BuildWeb.data.gz",
-        frameworkUrl: "Build/BuildWeb.framework.js.gz",
-        codeUrl: "Build/BuildWeb.wasm.gz",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Jampacked Games",
-        productName: "Pesticide Not Required",
-        productVersion: "0.1",
-      });
-    </script>
-  </body>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Pesticide Not Required</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #231F20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    #unity-container {
+      position: relative;
+      width: 95vw; /* Increased width */
+      height: 53.44vw; /* Maintain 16:9 ratio (95 * 9/16) */
+      max-width: 1440px; /* Larger max size */
+      max-height: 810px;
+    }
+    
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <script src="Build/BuildWeb.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "Build/BuildWeb.data.gz",
+      frameworkUrl: "Build/BuildWeb.framework.js.gz",
+      codeUrl: "Build/BuildWeb.wasm.gz",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Jampacked Games",
+      productName: "Pesticide Not Required",
+      productVersion: "0.1",
+    });
+  </script>
+</body>
 </html>
