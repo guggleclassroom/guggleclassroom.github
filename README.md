@@ -18,4 +18,6 @@ first recording: 1.10.2025
 [v2.15] - added retro bowl, dance of fire and ice, stacktris, and deepest sword (2.4.2025)  
 [v2.16] - first pokerogue test (2.5.2025)  
 [v2.17] - added pesticide not required and level 9 access (2.6.2025)  
-[v2.18] - time warriors test, balls incremental and fixed some issues (2.14.2025)
+[v2.18] - time warriors test, balls incremental and fixed some issues (2.14.2025)  
+[v2.19] - battle masters, kingdom rush, and talented (2.20.2025)  
+[v3] - added emulator (no roms), fixed previous issues, added soda dungeon and rogue jack
