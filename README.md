@@ -20,4 +20,6 @@ first recording: 1.10.2025
 [v2.17] - added pesticide not required and level 9 access (2.6.2025)  
 [v2.18] - time warriors test, balls incremental and fixed some issues (2.14.2025)  
 [v2.19] - battle masters, kingdom rush, and talented (2.20.2025)  
-[v3] - added emulator (no roms), fixed previous issues, added soda dungeon, roguejack, sentry knight 2, and into space (2.22.2025)  
+[v3] - added emulator (no roms), fixed previous issues, added soda dungeon, roguejack, sentry knight 2 (2.22.2025)  
+[v3.1] - yohoho test, fixed tactical assasin and sentry knight, and added wasm minecraft test (2.25.2025)   
+[v3.2] - removed broken games
