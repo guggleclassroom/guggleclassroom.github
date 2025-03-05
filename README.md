@@ -22,4 +22,4 @@ first recording: 1.10.2025
 [v2.19] - battle masters, kingdom rush, and talented (2.20.2025)  
 [v3] - added emulator (no roms), fixed previous issues, added soda dungeon, roguejack, sentry knight 2 (2.22.2025)  
 [v3.1] - yohoho test, fixed tactical assasin and sentry knight, and added wasm minecraft test (2.25.2025)   
-[v3.2] - removed broken games
+[v3.2] - removed broken games, added 3 pandas in japan, lost for swords, and cherry saga (3.4.2025)
