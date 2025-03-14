@@ -11,6 +11,7 @@ http://orteil.dashnet.org
 var VERSION=2.031;
 var BETA=0;
 
+
 /*=====================================================================================
 MISC HELPER FUNCTIONS
 =======================================================================================*/
@@ -1229,6 +1230,13 @@ Game.Launch=function()
 		if (Game.beta) Game.SaveTo='CookieClickerGameBeta';
 		l('versionNumber').innerHTML='v. '+Game.version+'<div id="httpsSwitch" style="cursor:pointer;display:inline-block;background:url(img/'+(Game.https?'lockOn':'lockOff')+'.png);width:16px;height:16px;position:relative;top:4px;left:0px;margin:0px -2px;"></div>'+(Game.beta?' <span style="color:#ff0;">beta</span>':'');
 		
+		if (Game.beta) {var me=l('linkVersionBeta');me.parentNode.removeChild(me);}
+		else if (Game.version==1.0466) {var me=l('linkVersionOld');me.parentNode.removeChild(me);}
+		else {var me=l('linkVersionLive');me.parentNode.removeChild(me);}
+
+		//l('links').innerHTML=(Game.beta?'<a href="../" target="blank">Live version</a> | ':'<a href="beta" target="blank">Try the beta!</a> | ')+'<a href="http://orteil.dashnet.org/experiments/cookie/" target="blank">Classic</a>';
+		//l('links').innerHTML='<a href="http://orteil.dashnet.org/experiments/cookie/" target="blank">Cookie Clicker Classic</a>';
+		
 		Game.lastActivity=Date.now();//reset on mouse move, key press or click
 		
 		//latency compensator stuff
@@ -1908,12 +1916,16 @@ Game.Launch=function()
 			else if (location.protocol=='http:') location.href='https:'+window.location.href.substring(window.location.protocol.length);
 		});
 		
+		Game.attachTooltip(l('topbarOrteil'),'<div style="padding:8px;width:250px;text-align:center;">Back to Orteil\'s subdomain!<br>Lots of other games in there!</div>','this');
+		Game.attachTooltip(l('topbarDashnet'),'<div style="padding:8px;width:250px;text-align:center;">Back to our homepage!</div>','this');
 		Game.attachTooltip(l('topbarTwitter'),'<div style="padding:8px;width:250px;text-align:center;">Orteil\'s twitter, which frequently features game updates.</div>','this');
 		Game.attachTooltip(l('topbarTumblr'),'<div style="padding:8px;width:250px;text-align:center;">Orteil\'s tumblr, which frequently features game updates.</div>','this');
 		Game.attachTooltip(l('topbarDiscord'),'<div style="padding:8px;width:250px;text-align:center;">Our official discord server.<br>You can share tips and questions about Cookie Clicker and all our other games!</div>','this');
 		Game.attachTooltip(l('topbarPatreon'),'<div style="padding:8px;width:250px;text-align:center;">Support us on Patreon and help us keep updating Cookie Clicker!<br>There\'s neat rewards for patrons too!</div>','this');
 		Game.attachTooltip(l('topbarMerch'),'<div style="padding:8px;width:250px;text-align:center;">Cookie Clicker shirts, hoodies and stickers!</div>','this');
 		Game.attachTooltip(l('topbarMobileCC'),'<div style="padding:8px;width:250px;text-align:center;">Play Cookie Clicker on your phone!<br>(Android only; iOS version will be released later)</div>','this');
+		Game.attachTooltip(l('topbarRandomgen'),'<div style="padding:8px;width:250px;text-align:center;">A thing we made that lets you write random generators.</div>','this');
+		Game.attachTooltip(l('topbarIGM'),'<div style="padding:8px;width:250px;text-align:center;">A thing we made that lets you create your own idle games using a simple scripting language.</div>','this');
 		
 		Game.attachTooltip(l('heralds'),function(){
 			var str='';
@@ -14251,8 +14263,6 @@ Game.Launch=function()
 		Game.T++;
 	}
 	
-	// G-98DP5VKS42
-	
 	/*=====================================================================================
 	DRAW
 	=======================================================================================*/
@@ -14467,7 +14477,6 @@ window.onload=function()
 			console.log('[=== '+choose([
 				'Oh, hello!',
 				'hey, how\'s it hangin',
-				'3kh0 is the best lol',
 				'About to cheat in some cookies or just checking for bugs?',
 				'Remember : cheated cookies taste awful!',
 				'Hey, Orteil here. Cheated cookies taste awful... or do they?',

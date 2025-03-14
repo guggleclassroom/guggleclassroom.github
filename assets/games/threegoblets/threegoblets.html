@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZQ3JMT1YT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QZQ3JMT1YT');
+</script>
+    <meta charset="UTF-8">
+    <title>Three Goblets</title>
+    <style>
+      * { margin: 0; padding: 0; overflow: hidden; }
+      
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #screenCanvas {
+        background-color: #000;
+      }
+    </style>
+    <script type="text/javascript" src="/cloak.js"></script>
+    <meta name="website" content="classroom6x.gitlab.io" />
+  </head>
+  <body>
+    <canvas id="screenCanvas"></canvas>
+    <script data-main="scripts/app" src="scripts/lib/require.js"></script>
+
+    <script>
+      function resizeCanvas() {
+        let canvas = document.getElementById("screenCanvas");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+      window.addEventListener("load", resizeCanvas);
+    </script>
+  </body>
+</html>

@@ -25,3 +25,4 @@ first recording: 1.10.2025
 [v3.2] - removed broken games, added 3 pandas in japan, lost for swords, and cherry saga (3.4.2025)
 [v3.3] - added tactical weapon pack, jelly car, and eggy car, and fixed index not updating hopefully (3.5.2025)
 [v3.4] - added volley / soccer / basketball random and cookie clicker (3.11.2025)
+[v3.4] - slice master / hole io / dta test , readded tactical assasin and updated minecraft, added three goblets, skibidi shooter, unicycle hero

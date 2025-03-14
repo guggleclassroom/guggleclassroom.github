@@ -84,7 +84,11 @@
     <div id="stars3"></div>
 
     <h1>mr smith gaming land</h1>
-    <button id="cloaked-word" class="top-right-button">about:blank</button>    
+    <button id="cloaked-word" class="top-right-button">about:blank</button>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="search (litle buggy)" onkeyup="searchGames()">
+    </div>
+    
     </h1>
     <div class="grid">
         <div class="game-card">
@@ -384,7 +388,13 @@
     <div class="game-card">
         <a href="assets/games/minecraft/eaglercraft.html">
             <img src="assets/icons/main/minecraft.jpg" alt="minecraft">
-            minecraft ()
+            minecraft (eagly test)
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="assets/games/minecraftprecision/precision.html">
+            <img src="assets/icons/main/precision.png" alt="precision">
+            minecraft (for roger)
         </a>
     </div>
     <div class="game-card">
@@ -443,8 +453,39 @@
     </div>
     <div class="game-card">
         <a href="assets/games/cookieclicker/cookieclicker.html">
-            <img src="assets/icons/main/elijah.png" alt="cookie clicker">
-            cookie clicker (elijah stop begging)
+            <img src="assets/icons/main/cookie.png" alt="cookie clicker">
+            cookie clicker
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="assets/games/tactassasin/tacticalassasin.html">
+            <img src="assets/icons/main/tacticalassassin2.png" alt="tactical assasin">
+            tactical assasin
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="assets/games/threegoblets/threegoblets.html">
+            <img src="assets/icons/main/threegoblets.png" alt="three goblets">
+            three goblets
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="assets/games/grindcraft/grindcraft.html">
+            <img src="assets/icons/main/grindcraft.avif" alt="grindcraft">
+            grindcraft
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="assets/games/unicyclehero/unicyclehero.html">
+            <img src="assets/icons/main/unicyclehero.png" alt="unicycle hero">
+            unicycle hero
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="assets/games/skibidishooter/skibidishooter.html">
+            <img src="assets/icons/main/skibidishooter.png" alt="skibidi shooter">
+            skibidi shooter
+        
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -473,5 +514,28 @@
             });
         });
     </script>
+   <script>
+   function searchGames() {
+    let input = document.getElementById('search-bar').value.toLowerCase();
+    let games = document.querySelectorAll('.game-card');
+
+    games.forEach(card => {
+        let titleElement = card.querySelector("a"); // Ensure it targets the game title
+        let title = titleElement ? titleElement.textContent.toLowerCase() : "";
+
+        if (title.includes(input)) {
+            card.style.visibility = "visible"; // Keep in layout but visible
+            card.style.position = "relative";  // Reset position
+            card.style.width = "200px";        // Ensure uniform size
+            card.style.height = "250px";
+        } else {
+            card.style.visibility = "hidden";  // Hide but keep layout intact
+            card.style.position = "absolute";  // Remove from grid layout
+            card.style.width = "0px";          // Shrink space
+            card.style.height = "0px";
+        }
+    });
+}
+    </script>    
 </body>
 </html>
