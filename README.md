@@ -21,8 +21,10 @@ first recording: 1.10.2025
 [v2.18] - time warriors test, balls incremental and fixed some issues (2.14.2025)  
 [v2.19] - battle masters, kingdom rush, and talented (2.20.2025)  
 [v3] - added emulator (no roms), fixed previous issues, added soda dungeon, roguejack, sentry knight 2 (2.22.2025)  
-[v3.1] - yohoho test, fixed tactical assasin and sentry knight, and added wasm minecraft test (2.25.2025)   
-[v3.2] - removed broken games, added 3 pandas in japan, lost for swords, and cherry saga (3.4.2025)
-[v3.3] - added tactical weapon pack, jelly car, and eggy car, and fixed index not updating hopefully (3.5.2025)
-[v3.4] - added volley / soccer / basketball random and cookie clicker (3.11.2025)
-[v3.4] - slice master / hole io / dta test , readded tactical assasin and updated minecraft, added three goblets, skibidi shooter, unicycle hero
+[v3.1] - yohoho test, fixed tactical assasin and sentry knight, and added wasm minecraft test (2.25.2025)     
+[v3.2] - removed broken games, added 3 pandas in japan, lost for swords, and cherry saga (3.4.2025)  
+[v3.3] - added tactical weapon pack, jelly car, and eggy car, and fixed index not updating hopefully (3.5.2025)  
+[v3.4] - added volley / soccer / basketball random and cookie clicker (3.11.2025)  
+[v3.4] - slice master / hole io / dta test , readded tactical assasin and updated minecraft, added three goblets, skibidi shooter, unicycle hero (3.12.2025)  
+[v3.5] - formally added chill guy clicker, cats, skibidi 1v100, and recoil  
+
