@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin panel</title>
+    <script>
+      // Firebase configuration (use your own Firebase config)
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID"
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // Function to generate a passkey
+      function generatePasskey() {
+        const passkey = Math.random().toString(36).substr(2, 8); // Simple passkey generation
+        localStorage.setItem("generatedPasskey", passkey);  // Store passkey in localStorage (or database in a real app)
+        alert("Generated Passkey: " + passkey);
+      }
+    </script>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+      }
+
+      h2, h3 {
+        margin-bottom: 10px;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+</head>
+<body>
+    <h2>Admin Panel</h2>
+    <h3>Passkey Generator</h3>
+    <button onclick="generatePasskey()">Generate Passkey</button>
+</body>
+</html>

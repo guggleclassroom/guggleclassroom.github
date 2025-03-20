@@ -1,564 +1,156 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZQ3JMT1YT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en" dir="ltr">
+	<head>
+		<script src="assets/powerschool/x-Ring-Enemie-Macd-To-This-To-becoyle-pleans-of-" async></script>
+		<title>
+			Student and Parent Sign In
+		</title>
+		<meta name="robots" content="noindex" />
+        <!-- Meta tag to show Smart App banner for iOS devices -->
+        <meta name="apple-itunes-app" content="app-id=973741088"/>
+		<link href="assets/powerschool/images/css/screen.css" rel="stylesheet" media="screen" />
+        <link href="assets/powerschool/images/css/print.css" rel="stylesheet" media="print" />
+		<link href="assets/powerschool/images/css/customization.css" rel="stylesheet" type="text/css" media="screen" />
+		<meta name="viewport" content="width=device-width" />
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" href="assets/powerschool/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="assets/powerschool/android-chrome-512x512.png" sizes="512x512" />
+		<link rel="icon" type="image/png" href="assets/powerschool/favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="assets/powerschool/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="assets/powerschool/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="assets/powerschool/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="assets/powerschool/favicon-128.png" sizes="128x128" />
+		<meta name="application-name" content="PowerSchool"/>
+		<meta name="msapplication-TileColor" content="#FFFFFF" />
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="/mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="/mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
+		<link rel="shortcut icon" href="assets/powerschool/favicon.ico" >
+	</head>
+	<body class="pslogin" id="pslogin">
+		<div id="container">
+            <div id="branding-district"></div>
+			<div id="content">
+                <div id="branding-powerschool"></div>
+				<h1 id="normalHeader">
+					Student and Parent Log In
+				</h1>
 
-  gtag('config', 'G-QZQ3JMT1YT');
-</script>
-    <meta charset="utf-8">
-    <title>Home -</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+                <div class="tabs">
+                    <ul id="tabs">
+                        <li id="sign-in-tab"><a href="#sign-in-content">Sign In</a></li>
+                        <li id="create-account-tab"><a href="#create-account-content">Create Account</a></li>
+                    </ul>
 
-        #stars, #stars2, #stars3 {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+                    <div id="sign-in-content">
+                        <form action="assets/powerschool/guardian/home.html" method="post" name="LoginForm" target="_top" id="LoginForm" onsubmit="doPCASLogin(this);">
+                            <input type="hidden" name="dbpw" value="" />
+                            <input type="hidden" name="translator_username" value="" />
+                            <input type="hidden" name="translator_password" value="" />
+                            <input type="hidden" name="translator_ldappassword" value="" />
+                            <input type="hidden" name="returnUrl" value=""/>
+                            <input type="hidden" name="serviceName" value="PS Parent Portal"/>
+                            <input type="hidden" name="serviceTicket" value=""/>
+                            <input type="hidden" name="pcasServerUrl" value="/"/>
+                            <input type="hidden" name="credentialType" value="User Id and Password Credential"/>
+                            <script>
+                                var hideLoginForm = 0;
+                            </script>
+                            <!--box content-->
+                            <div id="noscript" class="feedback-alert">
+                                 To sign in to PowerSchool, you must use a browser that supports and has JavaScript enabled.
+                            </div>
+                            <div id="login_fieldset" class="hide">
+                                <fieldset id="login-inputs">
+                                    <legend class="screen_readers_only">Enter your Username and Password</legend>
+                                    <div>
+                                        <label for="request_locale">Select Language</label>
+                                        <select name="request_locale" id="request_locale" onchange="setPageLocale(this.options[this.selectedIndex].value)">
+                                            <option value="en_US" selected="selected">English</option>
+                                            <option value="es_US">Spanish</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="fieldAccount" >Username</label>
+                                        <input type="text" id="fieldAccount" name="account" value="" size="39" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" />
+                                    </div>
+                                    <div>
+                                        <label for="fieldPassword" >Password</label>
+                                        <input type="password" id="fieldPassword" name="pw" value="" size="39" autocomplete="new-password" spellcheck="false" autocorrect="off" autocapitalize="off" />
+                                    </div>
+                                    <div id="translatorInput">
+                                        <label for="fieldTranslator" >Translator Sign In</label>
+                                        <input type="password" id="fieldTranslator" name="translatorpw" value="" size="39" autocomplete="new-password" spellcheck="false" autocorrect="off" autocapitalize="off" />
+                                    </div>
+                                    <div id="login-help">
+                                        <a id="loginHelpLink" href="assets/powerschool/public/account_recovery_begin.html">Forgot Username or Password?</a>
+                                    </div>
+                                    <div class="button-row" id="btn-enter-sign-in-div">
+                                        <button type="submit" id="btn-enter-sign-in" title="Sign In To PowerSchool Public Access" value="Enter" border="0" >
+                                            Sign In
+                                        </button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            position: relative;
-        }
+                    <div id="create-account-content">
+                        <h2>Create an Account</h2>
+                        <form action="login.html">
+                            <p>
+                                Create a parent account that allows you to view all of your students with one account. You can also manage your account preferences. <a href="assets/powerschool/public/createaccounthelp.html">Learn more.</a>
+                            </p>
+                            <div class="button-row">
+                                <button type="submit" title="Create Account">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="legal">
+                    <p>
+                        Copyright &copy; 2005-2024 PowerSchool Group LLC and/or its affiliate(s). All rights reserved.<br/>All trademarks are either owned or licensed by PowerSchool Group LLC and/or its affiliates.
+                    </p>
+                </div>
+                <p id="pearsoncorplink">
+                </p>
+                <p id="powerschoolcorplink"><a href="https://www.powerschool.com/privacy/" target="_blank">Privacy Policy</a></p>
+            </div>
+        </div>
 
-        .game-card {
-            background-color: #1f1f1f;
-            border: 3px solid #333333;
-            border-radius: 10px;
-            padding: 10px;
-            width: 200px;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-        }
+		<div id="branding-pearson">
+			<div id="logo-pearson"></div>
+			<div id="tagline-pearson"></div>
+		</div>
 
-        .game-card a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-        }
+		<script src="assets/powerschool/scripts/jquery-3.6.1/jquery-3.6.1.min.js"></script>
+        <script src="assets/powerschool/scripts/jquery-ui-1.13.2.custom.min.js"></script>
+		<script src="assets/powerschool/admin/javascript/md5.js"></script>
+		<script src="assets/powerschool/scripts/signin-scripts.js"></script>
+		<script>
+			//Hide or display the standard login fieldset
+			var hidelogin = 0;
 
-        .game-card a img {
-            display: block;
-            margin: 0 auto;
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+			if(hideLoginForm == 0 && hidelogin <= 1) {
+				jQuery("#login_fieldset").removeClass("hide");
+			}
 
-        .game-card a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
-
-    <h1>stop emailing me pls guys</h1>
-    <button id="cloaked-word" class="top-right-button">about:blank</button>
-    <div class="search-container">
-        <input type="text" id="search-bar" placeholder="search (litle buggy)" onkeyup="searchGames()">
-    </div>
-    
-    </h1>
-    <div class="grid">
-        <div class="game-card">
-        <a href="assets/games/dieinthedungeon/dieinthedungeon.html">
-            <img src="assets/icons/main/dieinthedungeon.png" alt="die in the dungeon">
-            die in the dungeon
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/sortthecourt/sortthecourt.html">
-            <img src="assets/icons/main/sortthecourt.png" alt="sort the court">
-            sort the court
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/rocketpult/rocketpult.html">
-            <img src="assets/icons/main/rocketpult.png" alt="rocketpult">
-            rocketpult
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/snowball.io/snowball.io.html">
-            <img src="assets/icons/main/snowball.io.png" alt="snowball.io">
-            snowball.io
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/slope/slope.html">
-            <img src="assets/icons/main/slope.png" alt="slope">
-            slope
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/10minutestilldawn/10minutestilldawn.html">
-            <img src="assets/icons/main/10minutestilldawn.png" alt="10 minutes till dawn">
-            10 minutes till dawn
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/drivemad/drivemad.html">
-            <img src="assets/icons/main/drivemad.png" alt="drive mad">
-            drive mad
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/frogmageddon/frogmageddon.html">
-            <img src="assets/icons/main/frogmageddon.png" alt="frogmageddon">
-            frogmageddon
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/blockblast/blockblast.html">
-            <img src="assets/icons/main/blockblast.png" alt="block blast">
-            block blast
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/tombofthemask/tombofthemask.html">
-            <img src="assets/icons/main/tombofthemask.png" alt="tomb of the mask">
-            tomb of the mask
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/minimetro/minimetro.html">
-            <img src="assets/icons/main/minimetro.png" alt="mini metro">
-            mini metro
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/roots/roots.html">
-            <img src="assets/icons/main/roots.png" alt="roots">
-            roots
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/slimeow/slimeow.html">
-            <img src="assets/icons/main/slimeow.png" alt="slimeow">
-            slimeow
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/popthelock/popthelock.html">
-            <img src="assets/icons/main/popthelock.png" alt="pop the lock">
-            pop the lock
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/snowrider/snowrider.html">
-            <img src="assets/icons/main/snowrider.png" alt="snow rider">
-            snow rider
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/shogunshowdown/shogunshowdown.html">
-            <img src="assets/icons/main/shogunshowdown.png" alt="shogun showdown">
-            shogun showdown
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/chibiknight/chibiknight.html">
-            <img src="assets/icons/main/chibiknight.png" alt="chibi knight">
-            chibi knight
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/onebtnbosses/onebtnbosses.html">
-            <img src="assets/icons/main/onebuttonbosses.png" alt="one button bosses">
-            one button bosses
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/rebound/rebound.html">
-            <img src="assets/icons/main/rebound.png" alt="re:bound">
-            re:bound
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/onebitadventure/onebitadventure.html">
-            <img src="assets/icons/main/onebitadventure.png" alt="one bit adventure">
-            one bit adventure
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/rogueisles/rogueisles.html">
-            <img src="assets/icons/main/rogueisles.png" alt="rogue isles">
-            rogue isles
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/dropguardians/dropguardians.html">
-            <img src="assets/icons/main/dropguardians.png" alt="drop guardians">
-            drop guardians
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/ouroborosking/ouroborosking.html">
-            <img src="assets/icons/main/ouroborosking.png" alt="ouroborosk king">
-            ouroboros king (chess)
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/solipskier/solipskier.html">
-            <img src="assets/icons/main/solipskier.png" alt="solipskier">
-            solipskier
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/crossyroad/crossyroad.html">
-            <img src="assets/icons/main/crossyroad.png" alt="crossy road">
-            crossy road
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/ducklife3/ducklife3.html">
-            <img src="assets/icons/main/ducklife3.png" alt="duck life 3">
-            duck life 3
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/hypersnake/hypersnake.html">
-            <img src="assets/icons/main/hypersnake.png" alt="hypersnake">
-            hypersnake
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/ragdollarchers/ragdollarchers.html">
-            <img src="assets/icons/main/ragdollarchers.png" alt="ragdoll archers">
-            ragdoll archers
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/ragdollhit/ragdollhit.html">
-            <img src="assets/icons/main/ragdollhit.png" alt="ragdoll hit">
-            ragdoll hit
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/ovo2/ovo2.html">
-            <img src="assets/icons/main/ovo2.png" alt="ovo 2">
-            ovo 2
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/ovodimensions/ovodimensions.html">
-            <img src="assets/icons/main/ovodimensions.avif" alt="ovo dimensions">
-            ovo dimensions
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/idlepinball/idlepinball.html">
-            <img src="assets/icons/main/idlepinball.avif" alt="idle pinball">
-            idle pinball
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/pushyourluck/pushyourluck.html">
-            <img src="assets/icons/main/pushyourluck.png" alt="push your luck">
-            push your luck
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/stickmanhook/stickmanhook.html">
-            <img src="assets/icons/main/stickmanhook.png" alt="stickman hook">
-            stickman hook
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/templeofboom/templeofboom.html">
-            <img src="assets/icons/main/templeofboom.png" alt="temple of boom">
-            temple of boom
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/balatro/balatro.html">
-            <img src="assets/icons/main/balatro.png" alt="balatro">
-            balatro
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/retrobowl/retrobowl.html">
-            <img src="assets/icons/main/retrobowl.png" alt="retro bowl">
-            retro bowl
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/deepestsword/deepestsword.html">
-            <img src="assets/icons/main/deepestsword.png" alt="deepest sword">
-            deepest sword
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/stacktris/stacktris.html">
-            <img src="assets/icons/main/stacktris.png" alt="stacktris">
-            stacktris
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/pesticidenotrequired/pesticidenotrequired.html">
-            <img src="assets/icons/main/pesticidenotrequired.png" alt="pesticide not required">
-            pesticide not required
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/level9access/level9access.html">
-            <img src="assets/icons/main/level9access.png" alt="level 9 access">
-            level 9 access
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/badpiggies/badpiggies.html">
-            <img src="assets/icons/main/badpiggies.png" alt="bad piggies">
-            bad piggies
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/ballsincremental/ballsincremental.html">
-            <img src="assets/icons/main/ballsincremental.png" alt="balls incremental">
-            balls incremental
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/battlemasters/battlemasters.html">
-            <img src="assets/icons/main/battlemasters.png" alt="battle masters">
-            battle masters
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/kingdomrush/kingdomrush.html">
-            <img src="assets/icons/main/kingdomrush.png" alt="kingdom rush">
-            kingdom rush
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/talented/talented.html">
-            <img src="assets/icons/main/talented.png" alt="talented">
-            talented    
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/sodadungeon/sodadungeon.html">
-            <img src="assets/icons/main/sodadungeon.png" alt="soda dungeon">
-            soda dungeon
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/jacksmith/jacksmith.html">
-            <img src="assets/icons/main/jacksmith.png" alt="jacksmith">
-            jacksmith
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/yohoho/yohoho.html">
-            <img src="assets/icons/main/yohoho.png" alt="yohoho">
-            yohoho.io
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/minecraft/eaglercraft.html">
-            <img src="assets/icons/main/minecraft.jpg" alt="minecraft">
-            minecraft (eagly test)
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/minecraftprecision/precision.html">
-            <img src="assets/icons/main/precision.png" alt="precision">
-            minecraft (for roger)
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/lostforswords/lostforswords.html">
-            <img src="assets/icons/main/lostforswords.png" alt="lost for swords">
-            lost for swords
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/3pandasinjapan/pandasinjapan.html">
-            <img src="assets/icons/main/3pandasinjapan.png" alt="pandas in japan">
-            pandas in japan 
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/cherrysaga/cherrysaga.html">
-            <img src="assets/icons/main/cherrysaga.jpg" alt="cherry saga">
-            cherry saga
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/eggycar/eggycar.html">
-            <img src="assets/icons/main/eggycar.png" alt="eggy car">
-            eggy car
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/tacticalweaponpack/tacticalweaponpack.html">
-            <img src="assets/icons/main/tacticalweapon.jpg" alt="gun">
-            tactical gun pack
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/jellycarworlds/jellycar.html">
-            <img src="assets/icons/main/jellycar.jpg" alt="jelly car worlds">
-            jelly car worlds
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/basketrandom/basketballrandom.html">
-            <img src="assets/icons/main/basketballrandom.png" alt="basketball random">
-            basketball random
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/volleyrandom/volleyrandom.html">
-            <img src="assets/icons/main/volleyballrandom.png" alt="volley random">
-            volleyball random
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/soccerrandom/soccerrandom.html">
-            <img src="assets/icons/main/soccerrandom.png" alt="soccer random">
-            soccer random
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/cookieclicker/cookieclicker.html">
-            <img src="assets/icons/main/cookie.png" alt="cookie clicker">
-            cookie clicker
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/tactassasin/tacticalassasin.html">
-            <img src="assets/icons/main/tacticalassassin2.png" alt="tactical assasin">
-            tactical assasin
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/threegoblets/threegoblets.html">
-            <img src="assets/icons/main/threegoblets.png" alt="three goblets">
-            three goblets
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/grindcraft/grindcraft.html">
-            <img src="assets/icons/main/grindcraft.avif" alt="grindcraft">
-            grindcraft
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/unicyclehero/unicyclehero.html">
-            <img src="assets/icons/main/unicyclehero.png" alt="unicycle hero">
-            unicycle hero
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/skibidishooter/skibidishooter.html">
-            <img src="assets/icons/main/skibidishooter.png" alt="skibidi shooter">
-            skibidi shooter
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/chillguyclicker/chillguyclicker.html">
-            <img src="assets/icons/main/chillguy.png" alt="chill guy clicker">
-            chill guy clicker
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/cats/cats.html">
-            <img src="assets/icons/main/cats.png" alt="cats">
-            c.a.t.s
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/skibidi1v100/skibidi1v100.html">
-            <img src="assets/icons/main/skibidi1v100.png" alt="skibidi 1v100">
-            skibidi 1v100
-        </a>
-    </div>
-    <div class="game-card">
-        <a href="assets/games/recoil/recoil.html">
-            <img src="assets/icons/main/recoil.png" alt="recoil">
-            recoil
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var cloakedWord = document.getElementById('cloaked-word');
-
-            cloakedWord.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                var newTab = window.open('about:blank', '_blank');
-
-                if (newTab) {
-                    var newTabBody = newTab.document.body;
-                    newTabBody.style.padding = '0';
-                    newTabBody.style.margin = '0';
-
-                    var iframe = document.createElement('iframe');
-                    iframe.src = window.location.href;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    iframe.style.border = 'none';
-
-                    newTab.document.body.appendChild(iframe);
-                } else {
-                    alert("Couldn't open a new tab.");
-                }
-            });
-        });
-    </script>
-   <script>
-   function searchGames() {
-    let input = document.getElementById('search-bar').value.toLowerCase();
-    let games = document.querySelectorAll('.game-card');
-
-    games.forEach(card => {
-        let titleElement = card.querySelector("a"); // Ensure it targets the game title
-        let title = titleElement ? titleElement.textContent.toLowerCase() : "";
-
-        if (title.includes(input)) {
-            card.style.visibility = "visible"; // Keep in layout but visible
-            card.style.position = "relative";  // Reset position
-            card.style.width = "200px";        // Ensure uniform size
-            card.style.height = "250px";
-        } else {
-            card.style.visibility = "hidden";  // Hide but keep layout intact
-            card.style.position = "absolute";  // Remove from grid layout
-            card.style.width = "0px";          // Shrink space
-            card.style.height = "0px";
-        }
-    });
-}
-    </script>    
-</body>
+			if($j('#loginTarget').length !== 0) {
+				var _studentHref = $j('#studentSignIn').attr("href");
+				var _parentHref = $j('#parentSignIn').attr("href");
+				var _loginHelpHref = $j('#loginHelpLink').attr("href");
+				if ($j('#loginTarget').val().includes("public/openid")) {
+					$j('#loginTarget').val($j('#loginTarget').val().replace("public/openid", "guardian/openid"));
+				}
+				var _loginTarget = encodeURIComponent($j('#loginTarget').val());
+				$j('#studentSignIn').attr("href", _studentHref + "&loginTarget=" + _loginTarget);
+				$j('#parentSignIn').attr("href", _parentHref + "&loginTarget=" + _loginTarget);
+				$j('#loginHelpLink').attr("href", _loginHelpHref + "?loginTarget=" + _loginTarget);
+        	}
+		</script>
+	</body>
 </html>

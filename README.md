@@ -26,5 +26,7 @@ first recording: 1.10.2025
 [v3.3] - added tactical weapon pack, jelly car, and eggy car, and fixed index not updating hopefully (3.5.2025)  
 [v3.4] - added volley / soccer / basketball random and cookie clicker (3.11.2025)  
 [v3.4] - slice master / hole io / dta test , readded tactical assasin and updated minecraft, added three goblets, skibidi shooter, unicycle hero (3.12.2025)  
-[v3.5] - formally added chill guy clicker, cats, skibidi 1v100, and recoil  
+[v3.5] - formally added chill guy clicker, cats, skibidi 1v100, and recoil (3.15.24)  
+[v3.6] - added firebase and passkey authentication (3.20.2025)  
+
 
