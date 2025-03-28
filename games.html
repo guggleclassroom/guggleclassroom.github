@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZQ3JMT1YT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QZQ3JMT1YT');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>games</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Use your previously provided CSS for the grid and game cards */
+    body {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-family: 'comic sans ms', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      overflow-x: hidden;
+      text-transform: lowercase;
+    }
+    .search-container {
+      margin: 20px auto;
+      width: 80%;
+    }
+    #search-bar {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #333;
+      background-color: #333;
+      color: #fff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      position: relative;
+    }
+    .game-card {
+      background-color: #1f1f1f;
+      border: 3px solid #333;
+      border-radius: 10px;
+      padding: 10px;
+      width: 200px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.5);
+    }
+    .game-card img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .game-card span {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    /* Iframe overlay for playing game */
+    #iframe-container {
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>games</h1>
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="search games...">
+  </div>
+  <div id="game-grid" class="grid">
+    <!-- Game cards will be loaded here by loader.js -->
+  </div>
+  <div id="iframe-container">
+    <!-- When a game is clicked, it loads in this iframe -->
+  </div>
+
+  <!-- Loader script loads the game cards -->
+  <script src="assets/js/loader.js"></script>
+  <script>
+    // Optional: You can add navigation within games.html to toggle back to grid view.
+    // For instance, after a game is loaded, add a "back" button.
+    function showGridView() {
+      document.getElementById("game-grid").style.display = "grid";
+      document.getElementById("iframe-container").style.display = "none";
+    }
+  </script>
+  <script>document.getElementById("search-bar").addEventListener("input", function() {
+    const query = this.value.toLowerCase();
+    const gameCards = document.querySelectorAll(".game-card");
+  
+    gameCards.forEach(card => {
+      const gameName = card.querySelector("span").textContent.toLowerCase();
+      if (gameName.includes(query)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+  </script>
+  <div id="iframe-container">
+    <button onclick="showGridView()">back</button>
+  </div>
+  
+</body>
+</html>

@@ -1,189 +1,132 @@
-/* General Page Styling */
-body {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+/* Game Container - Ensures cards are in a grid layout */
+#game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* Starry Background Layers */
-#stars, #stars2, #stars3 {
-  position: absolute;
+/* Game Card Styling */
+.game-card {
+  width: 200px;
+  height: 300px;
+  background-color: #222;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Ensure game images fit */
+.game-card img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Ensure text doesn't overflow */
+.game-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
-  background: transparent;
-}
-
-#stars {
-  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-  animation: moveStars 50s linear infinite;
-}
-
-#stars2 {
-  background: url('https://www.transparenttextures.com/patterns/tiny-stars.png') repeat;
-  animation: moveStars 100s linear infinite;
-  opacity: 0.5;
-}
-
-#stars3 {
-  background: url('https://www.transparenttextures.com/patterns/dark-matter.png') repeat;
-  animation: moveStars 150s linear infinite;
-  opacity: 0.3;
-}
-
-/* Star Animation */
-@keyframes moveStars {
-  from {
-      background-position: 0 0;
-  }
-  to {
-      background-position: -1000px 1000px;
-  }
-}
-
-/* Game Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  position: relative;
-}
-
-/* Game Cards */
-.game-card {
-  background-color: #1f1f1f;
-  border: 3px solid #333333;
-  border-radius: 10px;
-  padding: 10px;
-  width: 200px;
-  height: 250px;
+  width: 60px;
+  height: 100vh;
+  background-color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  z-index: 100;
+  padding-top: 10px;
 }
 
-.game-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+/* Content Section */
+.content {
+  width: calc(100% - 60px); /* Adjusted for sidebar width */
+  height: 100vh; /* Ensure it takes full screen height */
+  margin-left: 60px;
+  overflow: hidden;
 }
 
-.game-card a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.game-card a img {
-  display: block;
-  margin: 0 auto;
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-
-.top-right-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #ffffff;
-  color: #000000;
-  font-family: 'Comic Sans MS';
-  font-size: 14px;
-  font-weight: bold;
+/* Ensure iframe fills content area */
+.content iframe {
+  width: 100%;
+  height: 100%;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  z-index: 1000;
-}
-
-.top-right-button:hover {
-  background-color: #ffffff;
-  transform: scale(1.1);
-}
-
-.top-right-button:active {
-  background-color: #ffffff;
-  transform: scale(0.95);
-}
-/* Search Bar Styling */
-.search-container {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 10;
-}
-
-#search-bar {
-  padding: 8px;
-  width: 200px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  font-size: 14px;
-  background-color: #1f1f1f;
-  color: #ffffff;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  position: relative;
-  grid-auto-rows: min-content; /* Forces reflow after hiding elements */
-}
-
-/* Hide game cards smoothly when filtering */
-.game-card {
-  background-color: #1f1f1f;
-  border: 3px solid #333333;
-  border-radius: 10px;
-  padding: 10px;
-  width: 200px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.game-card a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.game-card a img {
   display: block;
-  margin: 0 auto;
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
+}
+
+/* Chat Window */
+#chat-window {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #333;
+  color: white;
+  display: none; /* Initially hidden */
+  z-index: 1001;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Hide game cards properly to prevent empty spaces */
-.hidden {
-  display: none;
+/* Chat Header */
+.chat-header {
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* Chat Content */
+.chat-content {
+  padding: 10px;
+  height: calc(100% - 80px);
+  overflow-y: auto;
+}
+
+/* Chat Footer */
+.chat-footer {
+  padding: 10px;
+  display: flex;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+.chat-footer button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-footer button:hover {
+  background-color: #45a049;
+}

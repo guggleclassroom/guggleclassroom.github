@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZQ3JMT1YT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QZQ3JMT1YT');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* General Layout */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #chatContainer {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            max-height: 300px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: #444;
+        }
+
+        #messageInput {
+            padding: 10px;
+            width: calc(100% - 20px);
+            border: 1px solid #666;
+            border-radius: 5px;
+            background-color: #222;
+            color: white;
+            outline: none;
+        }
+
+        #sendButton {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="chatContainer">
+        <div id="messages"></div>
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button id="sendButton">Send</button>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js" type="module"></script>
+
+    <!-- Chat Logic -->
+    <script type="module">
+        // Firebase Config
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
+        };
+
+        // Initialize Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+        import { getDatabase, ref, set, push, child, update, onValue } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+
+        // Chat Elements
+        const messagesDiv = document.getElementById('messages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+
+        // Sending message to Firebase
+        function sendMessage(messageText) {
+            const messagesRef = ref(db, 'messages/');
+            const newMessageRef = push(messagesRef);
+            set(newMessageRef, {
+                message: messageText,
+                timestamp: Date.now(),
+                user: auth.currentUser ? auth.currentUser.email : "Guest"
+            });
+        }
+
+        // Listen for new messages
+        function listenForMessages() {
+            const messagesRef = ref(db, 'messages/');
+            onValue(messagesRef, (snapshot) => {
+                const messages = snapshot.val();
+                messagesDiv.innerHTML = '';  // Clear current messages
+                for (const key in messages) {
+                    if (messages.hasOwnProperty(key)) {
+                        const message = messages[key];
+                        const messageElement = document.createElement('div');
+                        messageElement.classList.add('message');
+                        messageElement.innerText = `${message.user}: ${message.message}`;
+                        messagesDiv.appendChild(messageElement);
+                    }
+                }
+                messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to the bottom
+            });
+        }
+
+        // Send button click handler
+        sendButton.addEventListener('click', () => {
+            const messageText = messageInput.value.trim();
+            if (messageText) {
+                sendMessage(messageText);
+                messageInput.value = ''; // Clear input field
+            }
+        });
+
+        // Initializing the chat
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, start listening to messages
+                listenForMessages();
+            } else {
+                // User is not signed in
+                alert('Please sign in to chat.');
+            }
+        });
+    </script>
+</body>
+
+</html>

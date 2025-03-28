@@ -3,59 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin panel</title>
-    <script>
-      // Firebase configuration (use your own Firebase config)
-      const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-        projectId: "YOUR_PROJECT_ID"
-      };
-      firebase.initializeApp(firebaseConfig);
-
-      // Function to generate a passkey
-      function generatePasskey() {
-        const passkey = Math.random().toString(36).substr(2, 8); // Simple passkey generation
-        localStorage.setItem("generatedPasskey", passkey);  // Store passkey in localStorage (or database in a real app)
-        alert("Generated Passkey: " + passkey);
-      }
-    </script>
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        flex-direction: column;
-      }
-
-      h2, h3 {
-        margin-bottom: 10px;
-      }
-
-      button {
-        margin: 10px;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: none;
-        background-color: #4CAF50;
-        color: white;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <title>Admin Panel</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="auth.js" defer></script>
 </head>
 <body>
-    <h2>Admin Panel</h2>
-    <h3>Passkey Generator</h3>
-    <button onclick="generatePasskey()">Generate Passkey</button>
+    <h1>Admin Panel</h1>
+    <button id="logout-btn">Logout</button>
+
+    <h2>Active Users</h2>
+    <ul id="active-users"></ul>
+
+    <h2>All Users</h2>
+    <ul id="user-list"></ul>
+
+    <h2>Messages</h2>
+    <ul id="message-list"></ul>
+
+    <script>
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                checkAdmin(user).then(isAdmin => {
+                    if (!isAdmin) {
+                        window.location.href = "library.html";
+                    }
+                });
+
+                // Fetch active users
+                db.ref('activeUsers').on('value', (snapshot) => {
+                    const list = document.getElementById('active-users');
+                    list.innerHTML = '';
+                    snapshot.forEach(child => {
+                        const li = document.createElement('li');
+                        li.textContent = child.val().username;
+                        list.appendChild(li);
+                    });
+                });
+
+                // Fetch all users
+                db.ref('users').on('value', (snapshot) => {
+                    const list = document.getElementById('user-list');
+                    list.innerHTML = '';
+                    snapshot.forEach(child => {
+                        const li = document.createElement('li');
+                        li.textContent = child.val().username;
+                        list.appendChild(li);
+                    });
+                });
+
+                // Fetch messages
+                db.ref('messages').on('value', (snapshot) => {
+                    const list = document.getElementById('message-list');
+                    list.innerHTML = '';
+                    snapshot.forEach(child => {
+                        const li = document.createElement('li');
+                        li.textContent = child.val().text;
+                        const delBtn = document.createElement('button');
+                        delBtn.textContent = "Delete";
+                        delBtn.onclick = () => db.ref('messages/' + child.key).remove();
+                        li.appendChild(delBtn);
+                        list.appendChild(li);
+                    });
+                });
+
+            } else {
+                window.location.href = "login.html";
+            }
+        });
+    </script>
 </body>
 </html>

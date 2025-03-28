@@ -1,93 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <script>
-      // Function to log in using the passkey
-      function login() {
-        const enteredPasskey = document.getElementById("passkey").value;
-        const generatedPasskey = localStorage.getItem("generatedPasskey");  // Retrieve the stored passkey
-        
-        // Hardcoded passkey for admin access
-        const adminPasskey = "karimisfat";  // This is the specific passkey for admin login
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZQ3JMT1YT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QZQ3JMT1YT');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
 
-        if (enteredPasskey === generatedPasskey) {
-          // Set a cookie to remember the logged-in user
-          document.cookie = "userLoggedIn=true; path=/; max-age=172800";  // Cookie expires in 2 days
-          alert("Login successful!");
-          window.location.href = "library.html";  // Redirect to main library page
-        } else if (enteredPasskey === adminPasskey) {
-          // If the entered passkey is the admin passkey
-          alert("Admin access granted!");
-          window.location.href = "public/admin.html";  // Redirect to admin panel
-        } else {
-          alert("Invalid passkey. Please try again.");
-        }
-      }
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 
-      // Function to check if the user is already logged in (via cookie)
-      function checkLoginStatus() {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-          let cookie = cookies[i].trim();
-          if (cookie === "userLoggedIn=true") {
-            window.location.href = "library.html";  // Redirect to the main library page if already logged in
-            return;
-          }
-        }
-      }
+    const firebaseConfig = {
+      apiKey: "AIzaSyAqwTKgstyRCZwHoDIhMhgHSRKBKzASMR8",
+      authDomain: "cosmo-c821b.firebaseapp.com",
+      databaseURL: "https://cosmo-c821b-default-rtdb.firebaseio.com",
+      projectId: "cosmo-c821b",
+      storageBucket: "cosmo-c821b.firebasestorage.app",
+      messagingSenderId: "285432006631",
+      appId: "1:285432006631:web:be038b5384406fd30a1f42",
+      measurementId: "G-84X34T5QFM"
+    };
 
-      // Check login status when the page loads
-      window.onload = checkLoginStatus;
-    </script>
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        flex-direction: column;
-      }
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-      h2, h3 {
-        margin-bottom: 10px;
+    // Redirect if the user is already logged in
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        window.location.replace('library.html');
       }
+    });
 
-      input, button {
-        margin: 10px;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: none;
-        width: 200px;
-      }
+    function signIn(event) {
+      event.preventDefault(); // Prevent the form from reloading the page
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
 
-      input[type="text"] {
-        background-color: #333;
-        color: white;
-      }
+      console.log("Attempting to sign in with:", username, password);
 
-      button {
-        background-color: #4CAF50;
-        color: white;
-        cursor: pointer;
-      }
+      // Sign in with Firebase Authentication (email/password)
+      signInWithEmailAndPassword(auth, `${username}@example.com`, password)
+        .then(() => {
+          console.log("Sign-in successful");
+          window.location.replace('library.html'); // Redirect to library after successful login
+        })
+        .catch((error) => {
+          console.error("Sign-in error:", error.code, error.message);
+          alert('Incorrect username or password');
+        });
 
-      button:hover {
-        background-color: #45a049;
-      }
-    </style>
+      return false; // Ensure the form doesn't submit and reload the page
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #444;
+      width: 200px;
+    }
+
+    input[type="text"], input[type="password"] {
+      background-color: #333;
+      color: white;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .guest {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #444;
+      color: #ccc;
+      cursor: pointer;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+
+    .guest:hover {
+      background-color: #555;
+    }
+
+    #signupButton {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #008cba;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+    }
+
+    #signupButton:hover {
+      background-color: #007bb5;
+    }
+  </style>
 </head>
 <body>
-    <h2>user login</h2>
-    <h3>enter passkey</h3>
-    <input type="text" id="passkey" placeholder="Enter Passkey">
-    <button onclick="login()">login</button>
+
+  <button id="signupButton" onclick="window.location.href = 'signup.html'">sign up</button>
+
+  <h2>login</h2>
+  <p>enter username and password</p>
+
+  <form onsubmit="return signIn(event)">
+    <input type="text" id="username" placeholder="enter username" required>
+    <input type="password" id="password" placeholder="enter password" required>
+    <button type="submit">login</button>
+  </form>
+
+  <div class="guest" onclick="window.location.href = 'library.html'">continue as guest</div>
+
 </body>
 </html>

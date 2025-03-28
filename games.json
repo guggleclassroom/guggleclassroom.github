@@ -1,0 +1,488 @@
+{
+    "games": [
+      {
+        "name": "die in the dungeon",
+        "url": "assets/games/dieinthedungeon/dieinthedungeon.html",
+        "icon": "assets/icons/main/dieinthedungeon.png",
+        "alt": "die in the dungeon",
+        "category": ["action", "skill", "casual"]
+      },
+      {
+        "name": "sort the court",
+        "url": "assets/games/sortthecourt/sortthecourt.html",
+        "icon": "assets/icons/main/sortthecourt.png",
+        "alt": "sort the court",
+        "category": ["puzzle", "casual", "strategy"]
+      },
+      {
+        "name": "rocketpult",
+        "url": "assets/games/rocketpult/rocketpult.html",
+        "icon": "assets/icons/main/rocketpult.png",
+        "alt": "rocketpult",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "snowball.io",
+        "url": "assets/games/snowball.io/snowball.io.html",
+        "icon": "assets/icons/main/snowball.io.png",
+        "alt": "snowball.io",
+        "category": ["casual", "multiplayer"]
+      },
+      {
+        "name": "slope",
+        "url": "assets/games/slope/slope.html",
+        "icon": "assets/icons/main/slope.png",
+        "alt": "slope",
+        "category": ["racing", "arcade", "casual"]
+      },
+      {
+        "name": "10 minutes till dawn",
+        "url": "assets/games/10minutestilldawn/10minutestilldawn.html",
+        "icon": "assets/icons/main/10minutestilldawn.png",
+        "alt": "10 minutes till dawn",
+        "category": ["action", "survival", "arcade"]
+      },
+      {
+        "name": "drive mad",
+        "url": "assets/games/drivemad/drivemad.html",
+        "icon": "assets/icons/main/drivemad.png",
+        "alt": "drive mad",
+        "category": ["racing", "action"]
+      },
+      {
+        "name": "frogmageddon",
+        "url": "assets/games/frogmageddon/frogmageddon.html",
+        "icon": "assets/icons/main/frogmageddon.png",
+        "alt": "frogmageddon",
+        "category": ["action", "casual"]
+      },
+      {
+        "name": "block blast",
+        "url": "assets/games/blockblast/blockblast.html",
+        "icon": "assets/icons/main/blockblast.png",
+        "alt": "block blast",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "tomb of the mask",
+        "url": "assets/games/tombofthemask/tombofthemask.html",
+        "icon": "assets/icons/main/tombofthemask.png",
+        "alt": "tomb of the mask",
+        "category": ["arcade", "casual"]
+      },
+      {
+        "name": "mini metro",
+        "url": "assets/games/minimetro/minimetro.html",
+        "icon": "assets/icons/main/minimetro.png",
+        "alt": "mini metro",
+        "category": ["strategy", "simulation", "puzzle"]
+      },
+      {
+        "name": "roots",
+        "url": "assets/games/roots/roots.html",
+        "icon": "assets/icons/main/roots.png",
+        "alt": "roots",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "slimeow",
+        "url": "assets/games/slimeow/slimeow.html",
+        "icon": "assets/icons/main/slimeow.png",
+        "alt": "slimeow",
+        "category": ["casual", "puzzle"]
+      },
+      {
+        "name": "pop the lock",
+        "url": "assets/games/popthelock/popthelock.html",
+        "icon": "assets/icons/main/popthelock.png",
+        "alt": "pop the lock",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "snow rider",
+        "url": "assets/games/snowrider/snowrider.html",
+        "icon": "assets/icons/main/snowrider.png",
+        "alt": "snow rider",
+        "category": ["racing", "arcade"]
+      },
+      {
+        "name": "shogun showdown",
+        "url": "assets/games/shogunshowdown/shogunshowdown.html",
+        "icon": "assets/icons/main/shogunshowdown.png",
+        "alt": "shogun showdown",
+        "category": ["action", "strategy"]
+      },
+      {
+        "name": "chibi knight",
+        "url": "assets/games/chibiknight/chibiknight.html",
+        "icon": "assets/icons/main/chibiknight.png",
+        "alt": "chibi knight",
+        "category": ["action", "casual"]
+      },
+      {
+        "name": "one button bosses",
+        "url": "assets/games/onebtnbosses/onebtnbosses.html",
+        "icon": "assets/icons/main/onebuttonbosses.png",
+        "alt": "one button bosses",
+        "category": ["arcade", "casual"]
+      },
+      {
+        "name": "re:bound",
+        "url": "assets/games/rebound/rebound.html",
+        "icon": "assets/icons/main/rebound.png",
+        "alt": "re:bound",
+        "category": ["arcade", "action"]
+      },
+      {
+        "name": "one bit adventure",
+        "url": "assets/games/onebitadventure/onebitadventure.html",
+        "icon": "assets/icons/main/onebitadventure.png",
+        "alt": "one bit adventure",
+        "category": ["adventure", "casual"]
+      },
+      {
+        "name": "rogue isles",
+        "url": "assets/games/rogueisles/rogueisles.html",
+        "icon": "assets/icons/main/rogueisles.png",
+        "alt": "rogue isles",
+        "category": ["action", "adventure"]
+      },
+      {
+        "name": "drop guardians",
+        "url": "assets/games/dropguardians/dropguardians.html",
+        "icon": "assets/icons/main/dropguardians.png",
+        "alt": "drop guardians",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "ouroboros king (chess)",
+        "url": "assets/games/ouroborosking/ouroborosking.html",
+        "icon": "assets/icons/main/ouroborosking.png",
+        "alt": "ouroboros king (chess)",
+        "category": ["strategy", "puzzle"]
+      },
+      {
+        "name": "solipskier",
+        "url": "assets/games/solipskier/solipskier.html",
+        "icon": "assets/icons/main/solipskier.png",
+        "alt": "solipskier",
+        "category": ["racing", "casual"]
+      },
+      {
+        "name": "crossy road",
+        "url": "assets/games/crossyroad/crossyroad.html",
+        "icon": "assets/icons/main/crossyroad.png",
+        "alt": "crossy road",
+        "category": ["arcade", "casual"]
+      },
+      {
+        "name": "duck life 3",
+        "url": "assets/games/ducklife3/ducklife3.html",
+        "icon": "assets/icons/main/ducklife3.png",
+        "alt": "duck life 3",
+        "category": ["racing", "simulation", "casual"]
+      },
+      {
+        "name": "hypersnake",
+        "url": "assets/games/hypersnake/hypersnake.html",
+        "icon": "assets/icons/main/hypersnake.png",
+        "alt": "hypersnake",
+        "category": ["arcade", "casual"]
+      },
+      {
+        "name": "ragdoll archers",
+        "url": "assets/games/ragdollarchers/ragdollarchers.html",
+        "icon": "assets/icons/main/ragdollarchers.png",
+        "alt": "ragdoll archers",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "ragdoll hit",
+        "url": "assets/games/ragdollhit/ragdollhit.html",
+        "icon": "assets/icons/main/ragdollhit.png",
+        "alt": "ragdoll hit",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "ovo 2",
+        "url": "assets/games/ovo2/ovo2.html",
+        "icon": "assets/icons/main/ovo2.png",
+        "alt": "ovo 2",
+        "category": ["casual", "puzzle"]
+      },
+      {
+        "name": "ovo dimensions",
+        "url": "assets/games/ovodimensions/ovodimensions.html",
+        "icon": "assets/icons/main/ovodimensions.avif",
+        "alt": "ovo dimensions",
+        "category": ["casual", "puzzle"]
+      },
+      {
+        "name": "idle pinball",
+        "url": "assets/games/idlepinball/idlepinball.html",
+        "icon": "assets/icons/main/idlepinball.avif",
+        "alt": "idle pinball",
+        "category": ["arcade", "idle"]
+      },
+      {
+        "name": "push your luck",
+        "url": "assets/games/pushyourluck/pushyourluck.html",
+        "icon": "assets/icons/main/pushyourluck.png",
+        "alt": "push your luck",
+        "category": ["casual", "arcade"]
+      },
+      {
+        "name": "stickman hook",
+        "url": "assets/games/stickmanhook/stickmanhook.html",
+        "icon": "assets/icons/main/stickmanhook.png",
+        "alt": "stickman hook",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "temple of boom",
+        "url": "assets/games/templeofboom/templeofboom.html",
+        "icon": "assets/icons/main/templeofboom.png",
+        "alt": "temple of boom",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "balatro",
+        "url": "assets/games/balatro/balatro.html",
+        "icon": "assets/icons/main/balatro.png",
+        "alt": "balatro",
+        "category": ["arcade", "casual"]
+      },
+      {
+        "name": "retro bowl",
+        "url": "assets/games/retrobowl/retrobowl.html",
+        "icon": "assets/icons/main/retrobowl.png",
+        "alt": "retro bowl",
+        "category": ["sports", "simulation"]
+      },
+      {
+        "name": "deepest sword",
+        "url": "assets/games/deepestsword/deepestsword.html",
+        "icon": "assets/icons/main/deepestsword.png",
+        "alt": "deepest sword",
+        "category": ["action", "adventure"]
+      },
+      {
+        "name": "stacktris",
+        "url": "assets/games/stacktris/stacktris.html",
+        "icon": "assets/icons/main/stacktris.png",
+        "alt": "stacktris",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "pesticide not required",
+        "url": "assets/games/pesticidenotrequired/pesticidenotrequired.html",
+        "icon": "assets/icons/main/pesticidenotrequired.png",
+        "alt": "pesticide not required",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "level 9 access",
+        "url": "assets/games/level9access/level9access.html",
+        "icon": "assets/icons/main/level9access.png",
+        "alt": "level 9 access",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "bad piggies",
+        "url": "assets/games/badpiggies/badpiggies.html",
+        "icon": "assets/icons/main/badpiggies.png",
+        "alt": "bad piggies",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "balls incremental",
+        "url": "assets/games/ballsincremental/ballsincremental.html",
+        "icon": "assets/icons/main/ballsincremental.png",
+        "alt": "balls incremental",
+        "category": ["idle", "casual"]
+      },
+      {
+        "name": "battle masters",
+        "url": "assets/games/battlemasters/battlemasters.html",
+        "icon": "assets/icons/main/battlemasters.png",
+        "alt": "battle masters",
+        "category": ["action", "strategy"]
+      },
+      {
+        "name": "kingdom rush",
+        "url": "assets/games/kingdomrush/kingdomrush.html",
+        "icon": "assets/icons/main/kingdomrush.png",
+        "alt": "kingdom rush",
+        "category": ["strategy", "tower defense"]
+      },
+      {
+        "name": "talented",
+        "url": "assets/games/talented/talented.html",
+        "icon": "assets/icons/main/talented.png",
+        "alt": "talented",
+        "category": ["casual", "simulation"]
+      },
+      {
+        "name": "soda dungeon",
+        "url": "assets/games/sodadungeon/sodadungeon.html",
+        "icon": "assets/icons/main/sodadungeon.png",
+        "alt": "soda dungeon",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "jacksmith",
+        "url": "assets/games/jacksmith/jacksmith.html",
+        "icon": "assets/icons/main/jacksmith.png",
+        "alt": "jacksmith",
+        "category": ["simulation", "strategy"]
+      },
+      {
+        "name": "yohoho.io",
+        "url": "assets/games/yohoho/yohoho.html",
+        "icon": "assets/icons/main/yohoho.png",
+        "alt": "yohoho.io",
+        "category": ["casual", "multiplayer"]
+      },
+      {
+        "name": "minecraft (eagly test)",
+        "url": "assets/games/minecraft/eaglercraft.html",
+        "icon": "assets/icons/main/minecraft.jpg",
+        "alt": "minecraft (eagly test)",
+        "category": ["sandbox", "adventure"]
+      },
+      {
+        "name": "minecraft (for roger)",
+        "url": "assets/games/minecraftprecision/precision.html",
+        "icon": "assets/icons/main/precision.png",
+        "alt": "minecraft (for roger)",
+        "category": ["sandbox", "adventure"]
+      },
+      {
+        "name": "lost for swords",
+        "url": "assets/games/lostforswords/lostforswords.html",
+        "icon": "assets/icons/main/lostforswords.png",
+        "alt": "lost for swords",
+        "category": ["action", "adventure"]
+      },
+      {
+        "name": "pandas in japan",
+        "url": "assets/games/3pandasinjapan/pandasinjapan.html",
+        "icon": "assets/icons/main/3pandasinjapan.png",
+        "alt": "pandas in japan",
+        "category": ["casual", "puzzle"]
+      },
+      {
+        "name": "cherry saga",
+        "url": "assets/games/cherrysaga/cherrysaga.html",
+        "icon": "assets/icons/main/cherrysaga.jpg",
+        "alt": "cherry saga",
+        "category": ["puzzle", "casual"]
+      },
+      {
+        "name": "eggy car",
+        "url": "assets/games/eggycar/eggycar.html",
+        "icon": "assets/icons/main/eggycar.png",
+        "alt": "eggy car",
+        "category": ["racing", "casual"]
+      },
+      {
+        "name": "tactical gun pack",
+        "url": "assets/games/tacticalweaponpack/tacticalweaponpack.html",
+        "icon": "assets/icons/main/tacticalweapon.jpg",
+        "alt": "tactical gun pack",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "jelly car worlds",
+        "url": "assets/games/jellycarworlds/jellycar.html",
+        "icon": "assets/icons/main/jellycar.jpg",
+        "alt": "jelly car worlds",
+        "category": ["racing", "casual"]
+      },
+      {
+        "name": "basketball random",
+        "url": "assets/games/basketrandom/basketballrandom.html",
+        "icon": "assets/icons/main/basketballrandom.png",
+        "alt": "basketball random",
+        "category": ["sports", "casual"]
+      },
+      {
+        "name": "volleyball random",
+        "url": "assets/games/volleyrandom/volleyrandom.html",
+        "icon": "assets/icons/main/volleyballrandom.png",
+        "alt": "volleyball random",
+        "category": ["sports", "casual"]
+      },
+      {
+        "name": "soccer random",
+        "url": "assets/games/soccerrandom/soccerrandom.html",
+        "icon": "assets/icons/main/soccerrandom.png",
+        "alt": "soccer random",
+        "category": ["sports", "casual"]
+      },
+      {
+        "name": "cookie clicker",
+        "url": "assets/games/cookieclicker/cookieclicker.html",
+        "icon": "assets/icons/main/cookie.png",
+        "alt": "cookie clicker",
+        "category": ["idle", "casual"]
+      },
+      {
+        "name": "tactical assasin",
+        "url": "assets/games/tactassasin/tacticalassasin.html",
+        "icon": "assets/icons/main/tacticalassassin2.png",
+        "alt": "tactical assasin",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "three goblets",
+        "url": "assets/games/threegoblets/threegoblets.html",
+        "icon": "assets/icons/main/threegoblets.png",
+        "alt": "three goblets",
+        "category": ["casual", "arcade"]
+      },
+      {
+        "name": "grindcraft",
+        "url": "assets/games/grindcraft/grindcraft.html",
+        "icon": "assets/icons/main/grindcraft.avif",
+        "alt": "grindcraft",
+        "category": ["action", "strategy"]
+      },
+      {
+        "name": "unicycle hero",
+        "url": "assets/games/unicyclehero/unicyclehero.html",
+        "icon": "assets/icons/main/unicyclehero.png",
+        "alt": "unicycle hero",
+        "category": ["racing", "casual"]
+      },
+      {
+        "name": "skibidi shooter",
+        "url": "assets/games/skibidishooter/skibidishooter.html",
+        "icon": "assets/icons/main/skibidishooter.png",
+        "alt": "skibidi shooter",
+        "category": ["action", "arcade"]
+      },
+      {
+        "name": "chill guy clicker",
+        "url": "assets/games/chillguyclicker/chillguyclicker.html",
+        "icon": "assets/icons/main/chillguy.png",
+        "alt": "chill guy clicker",
+        "category": ["idle", "casual"]
+      },
+      {
+        "name": "skibidi 1v100",
+        "url": "assets/games/skibidi1v100/skibidi1v100.html",
+        "icon": "assets/icons/main/skibidi1v100.png",
+        "alt": "skibidi 1v100",
+        "category": ["casual", "multiplayer"]
+      },
+      {
+        "name": "recoil",
+        "url": "assets/games/recoil/recoil.html",
+        "icon": "assets/icons/main/recoil.png",
+        "alt": "recoil",
+        "category": ["action", "arcade"]
+      }
+    ]
+  }
+  
