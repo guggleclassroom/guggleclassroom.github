@@ -28,5 +28,8 @@ first recording: 1.10.2025
 [v3.4] - slice master / hole io / dta test , readded tactical assasin and updated minecraft, added three goblets, skibidi shooter, unicycle hero (3.12.2025)  
 [v3.5] - formally added chill guy clicker, cats, skibidi 1v100, and recoil (3.15.24)  
 [v3.6] - added firebase and passkey authentication (3.20.2025)  
+[v3.7] - updated firebase settings (2.27.2025)  
+[v3.8] - added paper io, gladihoppers, scrambled eggs, and doors. further updated firebase (3.28.2025)  
+
 
 

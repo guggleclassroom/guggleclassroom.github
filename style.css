@@ -1,78 +1,61 @@
-/* Game Container - Ensures cards are in a grid layout */
-#game-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #fff;
 }
 
-/* Game Card Styling */
-.game-card {
-  width: 200px;
-  height: 300px;
-  background-color: #222;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Ensure game images fit */
-.game-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Ensure text doesn't overflow */
-.game-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 60px;
-  height: 100vh;
-  background-color: #333;
+  width: 80px;
+  height: 100%;
+  background-color: #222;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 100;
-  padding-top: 10px;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+.sidebar-icon {
+  width: 60px;
+  height: 60px;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.sidebar-icon:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+.sidebar-icon i {
+  font-size: 24px;
+}
+.sidebar-icon span {
+  font-size: 10px;
+  margin-top: 5px;
+  text-transform: lowercase;
 }
 
-/* Content Section */
 .content {
-  width: calc(100% - 60px); /* Adjusted for sidebar width */
-  height: 100vh; /* Ensure it takes full screen height */
-  margin-left: 60px;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
-/* Ensure iframe fills content area */
 .content iframe {
   width: 100%;
   height: 100%;
   border: none;
-  display: block;
+  overflow: hidden;
 }
 
-/* Chat Window */
 #chat-window {
   position: fixed;
   bottom: 20px;
@@ -81,13 +64,11 @@
   height: 400px;
   background-color: #333;
   color: white;
-  display: none; /* Initially hidden */
+  display: none;
   z-index: 1001;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-/* Chat Header */
 .chat-header {
   background-color: #444;
   padding: 10px;
@@ -97,20 +78,15 @@
   justify-content: space-between;
   align-items: center;
 }
-
-/* Chat Content */
 .chat-content {
   padding: 10px;
   height: calc(100% - 80px);
   overflow-y: auto;
 }
-
-/* Chat Footer */
 .chat-footer {
   padding: 10px;
   display: flex;
 }
-
 .chat-footer input {
   flex: 1;
   padding: 5px;
@@ -118,7 +94,6 @@
   border-radius: 5px;
   border: 1px solid #444;
 }
-
 .chat-footer button {
   padding: 5px 10px;
   border-radius: 5px;
@@ -126,7 +101,18 @@
   color: white;
   cursor: pointer;
 }
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  border: none;
+}
 
-.chat-footer button:hover {
-  background-color: #45a049;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Make sure body and html cover full viewport */
+  overflow: hidden; /* Prevent scrolling */
 }

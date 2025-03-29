@@ -1,6 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
-import { getDatabase, ref, set, get, onValue, remove } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+import { 
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, 
+  signOut, onAuthStateChanged 
+} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+import { 
+  getDatabase, ref, set, get, remove 
+} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAqwTKgstyRCZwHoDIhMhgHSRKBKzASMR8",
@@ -19,26 +24,25 @@ const db = getDatabase(app);
 
 // Check if user is admin
 function checkAdmin(user) {
-  return db.ref('admins/' + user.uid).once('value').then(snapshot => snapshot.exists());
+  return get(ref(db, `admins/${user.uid}`)).then(snapshot => snapshot.exists());
 }
 
 // Handle signup
 document.getElementById('signup-form')?.addEventListener('submit', function(event) {
   event.preventDefault();
-
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  auth.createUserWithEmailAndPassword(username + "@example.com", password)
+  createUserWithEmailAndPassword(auth, username + "@example.com", password)
     .then((userCredential) => {
       const user = userCredential.user;
-      db.ref('users/' + user.uid).set({
+      return set(ref(db, `users/${user.uid}`), {
         username: username,
         role: "user"
+      }).then(() => {
+        alert("Signup successful!");
+        window.location.href = "library.html";
       });
-
-      alert("Signup successful!");
-      window.location.href = "library.html";
     })
     .catch((error) => {
       alert("Error: " + error.message);
@@ -48,13 +52,12 @@ document.getElementById('signup-form')?.addEventListener('submit', function(even
 // Handle login
 document.getElementById('login-form')?.addEventListener('submit', function(event) {
   event.preventDefault();
-
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  auth.signInWithEmailAndPassword(username + "@example.com", password)
+  signInWithEmailAndPassword(auth, username + "@example.com", password)
     .then(() => {
-      alert("login successful");
+      alert("Login successful");
       window.location.href = "library.html";
     })
     .catch((error) => {
@@ -64,26 +67,30 @@ document.getElementById('login-form')?.addEventListener('submit', function(event
 
 // Handle logout
 document.getElementById('logout-btn')?.addEventListener('click', () => {
-  auth.signOut().then(() => {
+  signOut(auth).then(() => {
     window.location.href = "login.html";
   });
 });
 
 // Show admin panel link in library.html if user is admin
-auth.onAuthStateChanged((user) => {
+onAuthStateChanged(auth, (user) => {
   if (user) {
     checkAdmin(user).then(isAdmin => {
-      if (isAdmin) {
-        document.getElementById("admin-link")?.classList.remove("hidden");
+      const adminLink = document.getElementById("admin-link");
+      if (adminLink) {
+        adminLink.classList.toggle("hidden", !isAdmin);
       }
     });
 
-    db.ref('activeUsers/' + user.uid).set({
+    set(ref(db, `activeUsers/${user.uid}`), {
       username: user.displayName || "Unknown",
       lastActive: Date.now()
     });
   } else {
-    document.getElementById("admin-link")?.classList.add("hidden");
-    db.ref('activeUsers/' + user.uid).remove();
+    const adminLink = document.getElementById("admin-link");
+    if (adminLink) {
+      adminLink.classList.add("hidden");
+    }
+    remove(ref(db, `activeUsers/${auth.currentUser?.uid}`));
   }
 });

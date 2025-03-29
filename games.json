@@ -442,13 +442,6 @@
         "category": ["casual", "arcade"]
       },
       {
-        "name": "grindcraft",
-        "url": "assets/games/grindcraft/grindcraft.html",
-        "icon": "assets/icons/main/grindcraft.avif",
-        "alt": "grindcraft",
-        "category": ["action", "strategy"]
-      },
-      {
         "name": "unicycle hero",
         "url": "assets/games/unicyclehero/unicyclehero.html",
         "icon": "assets/icons/main/unicyclehero.png",
@@ -482,6 +475,41 @@
         "icon": "assets/icons/main/recoil.png",
         "alt": "recoil",
         "category": ["action", "arcade"]
+      },
+      {
+        "name": "jump only",
+        "url": "assets/games/jumponly/jumponly.html",
+        "icon": "assets/icons/main/jumponly.png",
+        "alt": "jump only",
+        "category": ["action", "arcade", "casual"]
+      },
+      {
+      "name": "doors",
+      "url": "assets/games/doors/doors.html",
+      "icon": "assets/icons/main/doors.png",
+      "alt": "doors",
+      "category": ["action"]
+      },
+      {
+      "name": "gladihoppers",
+      "url": "assets/games/gladihoppers/gladihoppers.html",
+      "icon": "assets/icons/main/gladihoppers.png",
+      "alt": "gladihoppers",
+      "category": ["action", "arcade"]
+      },
+      {
+      "name": "paper io",
+      "url": "assets/games/paperio/paperio.html",
+      "icon": "assets/icons/main/paperio.png",
+      "alt": "paper io",
+      "category": ["action", "arcade", "casual"]
+      },
+      {
+      "name": "scrambled eggs",
+      "url": "assets/games/scrambledeggs/scrambledeggs.html",
+      "icon": "assets/icons/main/scrambledeggs.png",
+      "alt": "scrambled eggs",
+      "category": ["arcade", "casual"]
       }
     ]
   }

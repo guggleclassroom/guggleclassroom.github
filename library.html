@@ -21,7 +21,7 @@
       font-family: 'Comic Sans MS', cursive, sans-serif;
       color: #fff;
     }
-    
+
     .sidebar {
       position: fixed;
       top: 0;
@@ -58,7 +58,7 @@
       margin-top: 5px;
       text-transform: lowercase;
     }
-    
+
     .content {
       width: 100%;
       height: 100vh;
@@ -71,7 +71,7 @@
       border: none;
       overflow: hidden;
     }
-    
+
     #chat-window {
       position: fixed;
       bottom: 20px;
@@ -145,29 +145,31 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
-    import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
-    
+    import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+
     const firebaseConfig = {
       apiKey: "AIzaSyAqwTKgstyRCZwHoDIhMhgHSRKBKzASMR8",
       authDomain: "cosmo-c821b.firebaseapp.com",
       databaseURL: "https://cosmo-c821b-default-rtdb.firebaseio.com",
       projectId: "cosmo-c821b",
-      storageBucket: "cosmo-c821b.firebasestorage.app",
+      storageBucket: "cosmo-c821b.appspot.com",  // Corrected Storage Bucket URL
       messagingSenderId: "285432006631",
       appId: "1:285432006631:web:be038b5384406fd30a1f42",
       measurementId: "G-QZQ3JMT1YT"
     };
-    
+
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getDatabase(app);
 
     // Send message to Firebase Realtime Database
-    function sendMessage() {
+    function sendMessage(event) {
+      event.preventDefault();  // Prevent page reload when sending message
+
       const chatInput = document.getElementById('chat-input');
       const messageContent = chatInput.value.trim();
       const user = auth.currentUser;
-      
+
       if (!user) {
         alert("You need to be logged in to send a message.");
         return;
@@ -192,6 +194,8 @@
     // Event listener for the "Send" button
     document.getElementById("send-message").addEventListener("click", sendMessage);
 
+    // Listen for new messages
+    const chatContent = document.getElementById("chat-content");
     onAuthStateChanged(auth, user => {
       if (user) {
         const username = user.email.split('@')[0];
@@ -208,6 +212,32 @@
         });
       }
     });
+
+    // Close chat with escape key
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.getElementById("chat-window").style.display = "none";
+      }
+    });
+
+    // Auto-scroll chat to the latest message
+    function scrollToLatestMessage() {
+      chatContent.scrollTop = chatContent.scrollHeight;
+    }
+
+    // Update chat content dynamically
+    onValue(ref(db, 'messages'), (snapshot) => {
+      chatContent.innerHTML = '';  // Clear existing messages
+      snapshot.forEach((childSnapshot) => {
+        const messageData = childSnapshot.val();
+        const messageElement = document.createElement('div');
+        messageElement.textContent = `${messageData.username}: ${messageData.message}`;
+        chatContent.appendChild(messageElement);
+      });
+
+      scrollToLatestMessage();  // Auto-scroll after new messages are added
+    });
+
   </script>
 
   <script>

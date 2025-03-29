@@ -21,7 +21,7 @@
       authDomain: "cosmo-c821b.firebaseapp.com",
       databaseURL: "https://cosmo-c821b-default-rtdb.firebaseio.com",
       projectId: "cosmo-c821b",
-      storageBucket: "cosmo-c821b.firebasestorage.app",
+      storageBucket: "cosmo-c821b.appspot.com",
       messagingSenderId: "285432006631",
       appId: "1:285432006631:web:be038b5384406fd30a1f42",
       measurementId: "G-84X34T5QFM"
@@ -37,26 +37,30 @@
       }
     });
 
-    function signIn(event) {
-      event.preventDefault(); // Prevent the form from reloading the page
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginForm = document.getElementById("loginForm");
+      
+      if (loginForm) {
+        loginForm.addEventListener("submit", async (event) => {
+          event.preventDefault(); // Prevent page reload
+          
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
 
-      console.log("Attempting to sign in with:", username, password);
+          console.log("Attempting to sign in with:", username, password);
 
-      // Sign in with Firebase Authentication (email/password)
-      signInWithEmailAndPassword(auth, `${username}@example.com`, password)
-        .then(() => {
-          console.log("Sign-in successful");
-          window.location.replace('library.html'); // Redirect to library after successful login
-        })
-        .catch((error) => {
-          console.error("Sign-in error:", error.code, error.message);
-          alert('Incorrect username or password');
+          try {
+            const email = `${username}@example.com`; // If using email format
+            await signInWithEmailAndPassword(auth, email, password);
+            console.log("Sign-in successful");
+            window.location.replace('library.html'); // Redirect to library
+          } catch (error) {
+            console.error("Sign-in error:", error.code, error.message);
+            alert('Incorrect username or password');
+          }
         });
-
-      return false; // Ensure the form doesn't submit and reload the page
-    }
+      }
+    });
   </script>
 
   <link rel="stylesheet" href="style.css">
@@ -141,7 +145,7 @@
   <h2>login</h2>
   <p>enter username and password</p>
 
-  <form onsubmit="return signIn(event)">
+  <form id="loginForm">
     <input type="text" id="username" placeholder="enter username" required>
     <input type="password" id="password" placeholder="enter password" required>
     <button type="submit">login</button>
